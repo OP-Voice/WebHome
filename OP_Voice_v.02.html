@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overland Park Voice - A Platform for Community & Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Work in Progress Banner -->
+    <div class="bg-yellow-300 text-yellow-800 text-center p-2">
+        <p class="font-semibold">Excuse our mess! This site is a work in progress.</p>
+        <p class="text-sm">All information presented is accurate. For questions, please contact: <a href="mailto:Op.codydusthimer@gmail.com" class="font-bold underline">Op.codydusthimer@gmail.com</a></p>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">
+                Overland Park Voice
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#mission" class="text-gray-600 hover:text-blue-600 transition duration-300">Our Mission</a>
+                <a href="#platform" class="text-gray-600 hover:text-blue-600 transition duration-300">Our Platform</a>
+                <a href="#team" class="text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+                <a href="#resources" class="text-gray-600 hover:text-blue-600 transition duration-300">Resources</a>
+                <a href="#involved" class="text-gray-600 hover:text-blue-600 transition duration-300">Get Involved</a>
+                <a href="javascript:void(0)" class="modal-trigger bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300" data-title="Support Our Work" data-content="Thank you for your interest in supporting Overland Park Voice. A secure donation portal will be available here soon.">Support Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#mission" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Our Mission</a>
+            <a href="#platform" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Our Platform</a>
+            <a href="#team" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Our Team</a>
+            <a href="#resources" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Resources</a>
+            <a href="#involved" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Get Involved</a>
+            <a href="javascript:void(0)" class="modal-trigger block px-6 py-2 text-blue-600 font-bold hover:bg-gray-100" data-title="Support Our Work" data-content="Thank you for your interest in supporting Overland Park Voice. A secure donation portal will be available here soon.">Support Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-20 px-6 bg-blue-700 text-white fade-in">
+        <h1 class="text-5xl font-extrabold mb-2">Overland Park Voice</h1>
+        <p class="text-2xl font-bold italic">A Platform for Community & Commerce</p>
+    </section>
+
+    <!-- Our Mission -->
+    <section id="mission" class="py-20 px-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-1">
+                <img src="https://placehold.co/600x600/BFDBFE/1E3A8A?text=Community" alt="A diverse group of community members" class="rounded-lg mx-auto shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:col-span-2">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Mission: Completing the Civic Dialogue</h2>
+                <p class="text-lg mb-4">
+                    To champion a prosperous, future-ready Overland Park by fostering collaboration between our businesses, homeowners, and the entirety of our community workforce. We believe that long-term economic vitality is built on a foundation of community well-being, strategic investment, and opportunity for all residents.
+                </p>
+                <p class="text-lg">
+                   Overland Park benefits from many avenues for resident participation. However, a significant portion of our community—the people who make up our community workforce—currently has a limited channel to formally contribute to this dialogue. Overland Park Voice seeks to be an additive force, bringing the perspectives of this vital group to the table to ensure the city’s decisions are informed by the full spectrum of community experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section id="principles" class="bg-white py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">Our Core Principles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Collaborative</h3>
+                    <p>We seek to build bridges, not walls, believing the best solutions are found when all stakeholders work together toward shared goals.</p>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Community-Focused</h3>
+                    <p>A city's success is measured by the success of all its people. We are committed to ensuring the perspectives of our community workforce are part of the civic dialogue.</p>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Data-Driven</h3>
+                    <p>We advocate for policies based on transparent, verifiable data that highlights the true costs and benefits of development decisions for the entire community.</p>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Action-Oriented</h3>
+                    <p>We are focused on ensuring a community-centric vision for Overland Park is not just heard, but enacted through positive, constructive engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Platform Section -->
+    <section id="platform" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Platform: Aligning with City Goals</h2>
+                <p class="text-lg text-gray-600 mb-12">In May 2024, the City of Overland Park adopted <a href="https://frameworkop.org/" target="_blank" rel="noopener" class="text-blue-600 font-semibold hover:underline">FrameworkOP</a>, its official comprehensive plan. The platform of Overland Park Voice is fundamentally aligned with this vision. Our role is to act as a constructive partner to ensure the city is successful in transforming its well-articulated policies into tangible reality for all residents.</p>
+            </div>
+
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                    <h3 class="text-2xl font-bold mt-2 mb-4 text-blue-600">Pillar 1: Housing for Our Community Workforce</h3>
+                    <p class="text-gray-600 mb-4 font-semibold">Goal: To ensure Overland Park has a diverse and attainable range of housing options that support our community workforce.</p>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg mb-2 text-gray-800">Key Initiatives:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Activate the Overland Park Land Bank to preserve attainable housing.</li>
+                            <li>Establish a clear and fair "Renters' Bill of Rights" for housing stability.</li>
+                            <li>Champion "missing middle" housing to diversify our housing stock.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                    <h3 class="text-2xl font-bold mt-2 mb-4 text-blue-600">Pillar 2: Fiscally Responsible Growth</h3>
+                    <p class="text-gray-600 mb-4 font-semibold">Goal: To ensure the city's development process is transparent, predictable, and yields a clear, measurable return for the community.</p>
+                     <div class="flex-grow">
+                        <h4 class="font-bold text-lg mb-2 text-gray-800">Key Initiatives:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Advocate for a transparent, public rubric for evaluating projects requesting public incentives.</li>
+                            <li>Promote Community Benefit Agreements (CBAs) to give the community a direct voice in its growth.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                    <h3 class="text-2xl font-bold mt-2 mb-4 text-blue-600">Pillar 3: Empowering Community Stewards</h3>
+                    <p class="text-gray-600 mb-4 font-semibold">Goal: To build a robust pipeline of knowledgeable and engaged residents who can participate constructively in civic life.</p>
+                     <div class="flex-grow">
+                        <h4 class="font-bold text-lg mb-2 text-gray-800">Key Initiatives:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Create "The People's Leadership Program" (PLP) as a civic incubator to train and support residents.</li>
+                            <li>Encourage broad-based appointments to city boards and commissions to ensure leadership reflects the community.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section id="team" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                <!-- Team Member 1 -->
+                <div class="text-center">
+                    <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=Headshot" class="w-48 h-48 rounded-full mx-auto mb-4 shadow-lg" alt="Team Member Headshot">
+                    <h3 class="text-2xl font-bold">Your Name</h3>
+                    <p class="text-blue-600 font-semibold">Founder & Executive Director</p>
+                    <p class="text-gray-600 mt-2">A brief bio about the team member, their background in the community, and their motivation for starting or joining Overland Park Voice.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="text-center">
+                    <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=Headshot" class="w-48 h-48 rounded-full mx-auto mb-4 shadow-lg" alt="Team Member Headshot">
+                    <h3 class="text-2xl font-bold">Another Name</h3>
+                    <p class="text-blue-600 font-semibold">Director of Research</p>
+                    <p class="text-gray-600 mt-2">A brief bio about the team member, highlighting their expertise in data analysis, policy, or another relevant field.</p>
+                </div>
+                <!-- Team Member 3 -->
+                 <div class="text-center">
+                    <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=Headshot" class="w-48 h-48 rounded-full mx-auto mb-4 shadow-lg" alt="Team Member Headshot">
+                    <h3 class="text-2xl font-bold">Third Name</h3>
+                    <p class="text-blue-600 font-semibold">Community Outreach Coordinator</p>
+                    <p class="text-gray-600 mt-2">A brief bio about the team member, focusing on their experience in community organizing and building relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Resources Section -->
+    <section id="resources" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Community Resources</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- City Government -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">City Government</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-600 hover:underline">City of Overland Park Official Website</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">City Council Meetings & Agendas</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">Find Your City Councilmember</a></li>
+                    </ul>
+                </div>
+                <!-- Housing Assistance -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">Housing Assistance</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-600 hover:underline">Johnson County Housing Services</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">Kansas Housing Resources Corporation</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">Local Tenant Rights & Legal Aid</a></li>
+                    </ul>
+                </div>
+                <!-- Community Support -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">Community Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-600 hover:underline">Johnson County Library</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">United Community Services of Johnson County</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">Overland Park Chamber of Commerce</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Updates -->
+    <section id="updates" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Latest News & Analysis</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <a href="javascript:void(0)" class="iframe-modal-trigger" data-template-id="info-page-template" data-title="The Case for a Housing Advisory Commission"><img src="https://placehold.co/600x400/003F5C/FFFFFF?text=Housing+Advocacy" class="w-full h-48 object-cover" alt="Housing Advocacy Infographic"></a>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">July 7, 2025</p>
+                        <h3 class="font-bold text-xl mb-3"><a href="javascript:void(0)" class="iframe-modal-trigger hover:text-blue-700 transition duration-300" data-template-id="info-page-template" data-title="The Case for a Housing Advisory Commission">Analysis: A Housing Commission for OP</a></h3>
+                        <p class="text-gray-700 mb-4">A detailed, data-driven case for establishing a Housing Advisory Commission in Overland Park.</p>
+                        <a href="javascript:void(0)" class="iframe-modal-trigger text-blue-600 font-bold hover:underline" data-template-id="info-page-template" data-title="The Case for a Housing Advisory Commission">Read the Analysis &rarr;</a>
+                    </div>
+                </div>
+                <!-- Placeholder 1 -->
+                <div class="bg-white/60 rounded-lg border-2 border-dashed border-gray-300 flex flex-col">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 18V7.125c0-.621.504-1.125 1.125-1.125H9.375m3-3.375L12 1.5m0 3V1.5m0 3l3.375-3.375M12 1.5l-3.375 3.375" />
+                        </svg>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <p class="text-sm text-gray-400 mb-2">Coming Soon</p>
+                        <h3 class="font-bold text-xl mb-3 text-gray-500">New Analysis to Be Published</h3>
+                        <p class="text-gray-500 mb-4 flex-grow">Our next deep dive into local issues is in the works. Check back soon for more data-driven insights.</p>
+                        <span class="text-gray-400 font-bold">Stay Tuned &rarr;</span>
+                    </div>
+                </div>
+                <!-- Placeholder 2 -->
+                <div class="bg-white/60 rounded-lg border-2 border-dashed border-gray-300 flex flex-col">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                       <svg class="w-12 h-12 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <p class="text-sm text-gray-400 mb-2">Upcoming Event</p>
+                        <h3 class="font-bold text-xl mb-3 text-gray-500">Community Forum Announcement</h3>
+                        <p class="text-gray-500 mb-4 flex-grow">We are finalizing the details for our next community town hall. Date and location will be announced shortly.</p>
+                        <span class="text-gray-400 font-bold">Details Coming &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Get Involved -->
+    <section id="involved" class="relative bg-blue-700 text-white py-20 px-6 overflow-hidden">
+        <!-- Banner with higher z-index and semi-transparent background -->
+        <div class="absolute inset-0 bg-yellow-400 bg-opacity-75 text-yellow-900 -rotate-3 scale-110 flex items-center justify-center z-10">
+            <h3 class="text-4xl font-extrabold uppercase tracking-widest">Work in Progress</h3>
+        </div>
+        <!-- Content with lower z-index and faded opacity -->
+        <div class="relative container mx-auto text-center opacity-50">
+            <h2 class="text-4xl font-bold mb-4">Get Involved. Make a Difference.</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Change happens when we work together. Whether you want to volunteer, share your ideas, or subscribe for updates, your voice matters.</p>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Subscribe -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl text-left">
+                    <h3 class="text-2xl font-bold mb-4">Subscribe to Updates</h3>
+                    <form action="#" method="POST">
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" required>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-bold">Subscribe</button>
+                    </form>
+                </div>
+                 <!-- Let's Talk -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl text-left">
+                    <h3 class="text-2xl font-bold mb-4">Let's Talk</h3>
+                     <p class="mb-4 text-gray-700">Have a question or want to share your perspective? We're here to listen. Request a meeting or sign up to volunteer.</p>
+                     <div class="space-y-4">
+                         <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 font-bold">Request a Meeting</a>
+                         <a href="javascript:void(0)" class="modal-trigger block w-full text-center bg-gray-200 text-gray-800 py-3 rounded-lg hover:bg-gray-300 transition duration-300 font-bold" data-title="Volunteer Opportunities" data-content="Thank you for your interest in volunteering! More information about specific opportunities and a sign-up form will be available here shortly.">Volunteer</a>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="relative py-20 px-6 overflow-hidden">
+         <!-- Banner with higher z-index and semi-transparent background -->
+        <div class="absolute inset-0 bg-yellow-400 bg-opacity-75 text-yellow-900 -rotate-3 scale-110 flex items-center justify-center z-10">
+            <h3 class="text-4xl font-extrabold uppercase tracking-widest">Work in Progress</h3>
+        </div>
+        <!-- Content with lower z-index and faded opacity -->
+        <div class="relative container mx-auto max-w-2xl text-center opacity-50">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <p class="text-lg mb-8">Your questions, concerns, and ideas are important. Please feel free to reach out.</p>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                 <form action="#" method="POST">
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="contact-email" name="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div class="text-right">
+                         <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-bold">Send Message</button>
+                    </div>
+                 </form>
+            </div>
+             <div class="mt-12">
+                 <p class="text-lg"><strong>Email:</strong> <a href="mailto:contact@overlandparkvoice.org" class="text-blue-600 hover:underline">contact@overlandparkvoice.org</a></p>
+                 <div class="flex justify-center space-x-6 mt-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 px-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Overland Park Voice | overlandparkvoice.org</p>
+            <div class="mt-4 space-x-6">
+                <a href="javascript:void(0)" class="modal-trigger hover:underline" data-title="Privacy Policy" data-content="This website respects your privacy. No personal information is collected unless you voluntarily provide it through the contact or subscription forms. The information you provide will be used solely to respond to your inquiries or send updates. Your data will not be sold or shared with third parties.">Privacy Policy</a>
+                <a href="javascript:void(0)" class="modal-trigger hover:underline" data-title="Site Credits" data-content="This website was designed and developed with care. Placeholder images from placehold.co.">Site Credits</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="page-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-6xl h-5/6 flex flex-col transform -translate-y-10 opacity-0">
+            <div class="flex justify-between items-center border-b p-4 flex-shrink-0">
+                <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                <button id="modal-close" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+            <div id="modal-content-body" class="flex-grow overflow-auto">
+                <!-- Content (text or iframe) is injected here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden template for the info page -->
+    <template id="info-page-template">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>A More Inclusive Overland Park: The Case for a Housing Advisory Commission</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Inter', sans-serif;
+                    background-color: #f3f4f6;
+                }
+                .chart-container {
+                    position: relative;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 450px;
+                    height: 320px;
+                }
+                .wide-chart-container {
+                    position: relative;
+                    width: 100%;
+                    height: 400px;
+                    max-height: 50vh;
+                }
+                @media (min-width: 768px) {
+                    .chart-container {
+                        height: 350px;
+                    }
+                }
+                .kpi {
+                    background-color: #003F5C;
+                    color: white;
+                }
+                .kpi-value {
+                    font-size: 4.5rem;
+                    font-weight: 800;
+                    line-height: 1;
+                }
+                .kpi-label {
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                }
+                .timeline-item {
+                    position: relative;
+                    padding-bottom: 2.5rem;
+                    padding-left: 2.5rem;
+                }
+                .timeline-item:last-child {
+                    padding-bottom: 0;
+                }
+                .timeline-marker {
+                    position: absolute;
+                    left: 0;
+                    top: 0.25rem;
+                    height: 1.25rem;
+                    width: 1.25rem;
+                    background-color: #FFA600;
+                    border-radius: 9999px;
+                    border: 3px solid white;
+                }
+                .timeline-line {
+                    position: absolute;
+                    left: 0.5rem;
+                    top: 1.75rem;
+                    bottom: 0;
+                    width: 2px;
+                    background-color: #e5e7eb;
+                }
+                 .flow-box {
+                    border: 2px solid #9ca3af;
+                    background-color: white;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    font-weight: 600;
+                    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+                }
+                .flow-arrow {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #6b7280;
+                    font-size: 2rem;
+                    margin: 0 0.5rem;
+                }
+                .flow-gap {
+                     border: 2px dashed #EF5675;
+                     color: #EF5675;
+                     background-color: #fef2f2;
+                }
+                .waffle-grid {
+                    display: grid;
+                    grid-template-columns: repeat(40, 1fr);
+                    gap: 3px;
+                    max-width: 100%;
+                }
+                .waffle-cell {
+                    width: 100%;
+                    padding-bottom: 100%; /* For aspect ratio 1:1 */
+                    border-radius: 2px;
+                }
+            </style>
+        </head>
+        <body class="text-gray-800">
+            <header class="bg-white shadow-md">
+                <div class="max-w-6xl mx-auto py-8 px-4 text-center">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-[#003F5C]">A Seat at the Table for 31,000 Households</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">The case for establishing a Housing Advisory Commission to build a more inclusive and stable future for all Overland Park residents.</p>
+                </div>
+            </header>
+            <main class="max-w-6xl mx-auto p-4 md:p-8">
+                <section id="situation" class="mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Situation in Overland Park</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="kpi rounded-lg p-6 flex flex-col items-center justify-center text-center">
+                            <div class="kpi-value">38%</div>
+                            <div class="kpi-label">of Overland Park households are renters. That's over 31,000 homes.</div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">Renter vs. Owner Households</h3>
+                            <div class="chart-container">
+                                <canvas id="renterOwnerChart"></canvas>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-4 text-center">Renters form a significant and vital part of the city's foundation, yet lack a formal voice in civic matters.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="representation" class="mb-12 bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Representation Gap</h2>
+                    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">While the city provides channels for resident feedback, the primary formal structure is designed for homeowners, leaving a substantial part of the community without dedicated representation.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="flow-box">Residents</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box">Neighborhood Executive Committee (HOAs & Homeowners)</div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-box">City Council</div>
+                    </div>
+                     <div class="flex items-center justify-center mt-6">
+                        <div class="flow-box flow-gap">Renters (38% of Households) Have No Formal Channel</div>
+                    </div>
+                </section>
+                <section id="affordability" class="mb-12">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-3xl font-bold text-center mb-2">The Widespread Affordability Gap</h2>
+                        <p class="text-sm text-gray-600 mb-4 text-center max-w-4xl mx-auto">Purple = 30% affordable portion • Dark Blue = remaining income • Red shaded = affordability gap • <span style="color:#D90429; font-weight:bold;">Red line = $1,550 average rent</span></p>
+                        <div class="wide-chart-container">
+                            <canvas id="affordabilityChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                <section id="solution" class="mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8">A Measured, Low-Cost Solution</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">Proposal: Housing Advisory Commission</h3>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-[#FFA600] font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-gray-900">Advisory Role:</strong> To study housing issues and provide informed, balanced recommendations to the City Council.</div>
+                                </li>
+                                <li class="flex items-start">
+                                     <span class="text-[#FFA600] font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-gray-900">Inclusive Representation:</strong> At least one-third of seats reserved for renters, ensuring their perspective is heard.</div>
+                                </li>
+                                 <li class="flex items-start">
+                                     <span class="text-[#FFA600] font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-gray-900">Collaborative Focus:</strong> A forum for renters, homeowners, developers, and the city to find common ground.</div>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">A 1-in-1,000 Investment</h3>
+                            <p class="text-sm text-center text-gray-600 mb-4">This proposal asks for just <strong>one dollar</strong> for every <strong>$1,000</strong> in the General Fund. The single <span style="color:#FFA600; font-weight:bold;">orange square</span> represents the commission's budget relative to the fund.</p>
+                            <div id="waffleChart" class="waffle-grid max-w-sm mx-auto"></div>
+                        </div>
+                    </div>
+                </section>
+                <section id="opposition" class="mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8">Addressing Potential Concerns</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "It's just more cost and bureaucracy."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> It's an investment in smarter governance. This is a low-cost, high-impact tool for developing more effective and equitable policies that reflect the entire community, preventing more costly housing crises down the road.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "Existing channels are sufficient."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> Existing channels were not designed to represent renters. While informal feedback is possible, it is no substitute for a formal, structured seat at the table where the unique challenges of 31,000 households can be consistently addressed.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "This is a backdoor to rent control."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> The commission's role is strictly advisory, not regulatory. The goal is to foster collaboration between all stakeholders—renters, landlords, and developers—to find balanced solutions that ensure market stability, not to impose price controls.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "This isn't the city's role."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> Housing is infrastructure. A stable housing market is essential for economic development, workforce-retention, and community health—all core city responsibilities. The city's own data confirms a housing gap; this is a proactive step to address it.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "Just add renters to an existing committee."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> The NEC is designed for homeowner issues like zoning and property upkeep. Housing affordability is a complex, city-wide economic issue that requires its own dedicated focus to ensure the voices of renters, landlords, and housing experts are central to the conversation, not a footnote.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-[#7A5195] mb-2">Myth: "Renters don't pay their fair share for a voice."</h3>
+                            <p class="text-gray-700"><strong class="font-semibold text-gray-900">Fact:</strong> Renters already pay property taxes. They are a major operating cost for landlords and are factored directly into the price of rent. Every month, 31,000 households contribute to the city's tax base. Their financial contribution is present; their formal representation is not.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="conclusion" class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Path to a More Inclusive Overland Park</h2>
+                    <div class="max-w-md mx-auto">
+                        <div class="relative">
+                            <div class="timeline-line"></div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <h4 class="font-bold">Public Testimony</h4>
+                                <p class="text-sm text-gray-600">The conversation begins by highlighting the need for renter representation.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <h4 class="font-bold">Council Consideration & Budget Allocation</h4>
+                                <p class="text-sm text-gray-600">The City Council agrees to the modest 0.1% investment.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <h4 class="font-bold">Commission Formation</h4>
+                                <p class="text-sm text-gray-600">A diverse commission with renter, homeowner, and industry voices is formed.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <h4 class="font-bold">A Stronger Future</h4>
+                                <p class="text-sm text-gray-600">Overland Park benefits from smarter, more equitable housing policies for all.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-8 text-lg text-gray-700">Establishing a Housing Advisory Commission is a vital step toward ensuring the people who keep our city vibrant can afford to call it home.</p>
+                </section>
+            </main>
+            <footer class="text-center py-6">
+                <p class="text-xs text-gray-500">Data sourced from resident testimony, the 2024 City of Overland Park Adopted Budget, and salary data from ZipRecruiter and the US Social Security Administration.</p>
+            </footer>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tooltipTitleCallback = {
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    title: function(tooltipItems) {
+                                        const item = tooltipItems[0];
+                                        let label = item.chart.data.labels[item.dataIndex];
+                                        if (Array.isArray(label)) {
+                                            return label[0];
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    };
+                    const renterOwnerCtx = document.getElementById('renterOwnerChart').getContext('2d');
+                    new Chart(renterOwnerCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Renters', 'Homeowners'],
+                            datasets: [{
+                                label: 'Household Type',
+                                data: [38, 62],
+                                backgroundColor: ['#7A5195', '#003F5C'],
+                                borderColor: '#ffffff',
+                                borderWidth: 4,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            cutout: '60%',
+                            plugins: {
+                                ...tooltipTitleCallback.plugins,
+                                legend: {
+                                    position: 'bottom',
+                                }
+                            }
+                        }
+                    });
+                    const affordabilityLabels = ['Retiree', 'Preschool Teacher', 'City Admin Staff', 'Firefighter'];
+                    const affordableData = [617, 851, 1124, 1472];
+                    const remainingData = [1438, 1984, 2622, 3436];
+                    const avgRent = 1550;
+                    const affordabilityChartData = {
+                        labels: affordabilityLabels,
+                        datasets:[
+                            { label:'30% Affordable Portion', data: affordableData, backgroundColor: '#7A5195' },
+                            { label:'Remaining Income', data: remainingData, backgroundColor: '#003F5C' }
+                        ]
+                    };
+                    const affordabilityAnnotations = {
+                        avgLine: {
+                            type: 'line',
+                            xMin: avgRent,
+                            xMax: avgRent,
+                            borderColor: '#D90429',
+                            borderWidth: 2,
+                            label: {
+                                content: 'Average Rent: $1,550',
+                                enabled: true,
+                                position: 'start',
+                                backgroundColor: 'rgba(217, 4, 41, 0.8)',
+                                color: '#fff',
+                                font: { weight:'bold', size:10 }
+                            }
+                        }
+                    };
+                    affordableData.forEach((val, i) => {
+                        if (avgRent > val) {
+                            affordabilityAnnotations['gapBox' + i] = {
+                                type: 'box',
+                                xMin: val,
+                                xMax: avgRent,
+                                yMin: i - 0.4,
+                                yMax: i + 0.4,
+                                backgroundColor: 'rgba(217, 4, 41, 0.35)',
+                                borderWidth: 0
+                            };
+                            affordabilityAnnotations['gapLabel' + i] = {
+                                type: 'label',
+                                xValue: (avgRent + val) / 2,
+                                yValue: i,
+                                content: ['$' + (avgRent - val) + ' gap'],
+                                color: '#FFFFFF',
+                                font: { weight: 'bold', size: 12 },
+                                position: 'center'
+                            };
+                        }
+                    });
+                    new Chart(document.getElementById('affordabilityChart'), {
+                        type: 'bar',
+                        data: affordabilityChartData,
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                tooltip: {
+                                    callbacks: {
+                                        label: ctx => `${ctx.dataset.label}: $${ctx.parsed.x.toLocaleString()}`
+                                    }
+                                },
+                                annotation: {
+                                    annotations: affordabilityAnnotations
+                                },
+                                legend: {
+                                    position:'bottom'
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    stacked: true,
+                                    ticks: {
+                                        callback: v => `$${v.toLocaleString()}`
+                                    }
+                                },
+                                y: {
+                                    stacked: true
+                                }
+                            }
+                        }
+                    });
+                    const waffleContainer = document.getElementById('waffleChart');
+                    for (let i = 0; i < 1000; i++) {
+                        const cell = document.createElement('div');
+                        cell.classList.add('waffle-cell');
+                        if (i === 0) {
+                            cell.style.backgroundColor = '#FFA600'; // Orange
+                        } else {
+                            cell.style.backgroundColor = '#003F5C'; 
+                        }
+                        waffleContainer.appendChild(cell);
+                    }
+                });
+            </script>
+        </body>
+        </html>
+    </template>
+
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Modal Functionality ---
+        const modal = document.getElementById('page-modal');
+        const modalContent = modal.querySelector('.modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContentBody = document.getElementById('modal-content-body');
+        const modalCloseButton = document.getElementById('modal-close');
+
+        // Function to show the modal
+        const showModal = (title, content, isIframe = false) => {
+            modalTitle.innerHTML = title;
+            modalContentBody.innerHTML = content;
+
+            if (isIframe) {
+                // For iframes, remove padding from the container so the iframe can be flush
+                modalContentBody.classList.remove('p-8');
+            } else {
+                // For text, ensure padding is present
+                modalContentBody.classList.add('p-8');
+            }
+            
+            modal.classList.remove('pointer-events-none');
+            // Use a short timeout to allow the display property to change before starting the transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('-translate-y-10', 'opacity-0');
+            }, 20);
+        };
+
+        // Function to hide the modal
+        const hideModal = () => {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('-translate-y-10', 'opacity-0');
+            // Allow transitions to finish before setting pointer-events to none
+            setTimeout(() => {
+                 modal.classList.add('pointer-events-none');
+                 modalContentBody.innerHTML = ''; // Clear content to stop videos/scripts
+            }, 300);
+        };
+
+        // --- Event Listeners ---
+
+        // A single event listener on the body to handle all modal triggers
+        document.body.addEventListener('click', function(e) {
+            const textTrigger = e.target.closest('.modal-trigger');
+            const iframeTrigger = e.target.closest('.iframe-modal-trigger');
+
+            if (textTrigger) {
+                e.preventDefault();
+                const title = textTrigger.getAttribute('data-title');
+                const content = textTrigger.getAttribute('data-content');
+                showModal(title, content, false);
+            } else if (iframeTrigger) {
+                e.preventDefault();
+                const title = iframeTrigger.getAttribute('data-title');
+                const templateId = iframeTrigger.getAttribute('data-template-id');
+                const template = document.getElementById(templateId);
+                
+                if (template) {
+                    const docHtml = template.innerHTML.replace(/"/g, '&quot;'); // Escape quotes for the attribute
+                    const iframeContent = `<iframe class="w-full h-full border-0" srcdoc="${docHtml}" title="${title}"></iframe>`;
+                    showModal(title, iframeContent, true);
+                }
+            }
+        });
+
+        // Listener for the close button
+        modalCloseButton.addEventListener('click', hideModal);
+        
+        // Listener to close the modal by clicking on the background overlay
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+
+        // Listener to close the modal with the Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+                hideModal();
+            }
+        });
+    </script>
+</body>
+</html>
