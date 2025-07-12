@@ -794,43 +794,18 @@
             } else if (iframeTrigger) {
                 e.preventDefault();
                 const title = iframeTrigger.getAttribute('data-title');
-                const templateId = iframeTrigger.getAttribute('data-template-id');
-                const template = document.getElementById(templateId);
-                
-                if (template) {
-                    const docHtml = template.innerHTML.replace(/"/g, '&quot;'); // Escape quotes for the attribute
-                    const iframeContent = `<iframe class="w-full h-full border-0" srcdoc="${docHtml}" title="${title}"></iframe>`;
-                    showModal(title, iframeContent, true);
-                }
-            }
-        });
-
-        // Listener for the close button
-        modalCloseButton.addEventListener('click', hideModal);
-        
-        // Listener to close the modal by clicking on the background overlay
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                hideModal();
-            }
-        });
-
-        // Listener to close the modal with the Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
-                hideModal();
-            }
-        });
-    </script>
-</body>
-</html>
-                const templateId = iframeTrigger.getAttribute('data-template-id');
-                const template = document.getElementById(templateId);
-                
-                if (template) {
-                    const docHtml = template.innerHTML.replace(/"/g, '&quot;'); // Escape quotes for the attribute
-                    const iframeContent = `<iframe class="w-full h-full border-0" srcdoc="${docHtml}" title="${title}"></iframe>`;
-                    showModal(title, iframeContent, true);
+<!-- End of main script and HTML file -->
+                if (iframeTrigger) {
+                    e.preventDefault();
+                    const title = iframeTrigger.getAttribute('data-title');
+                    const templateId = iframeTrigger.getAttribute('data-template-id');
+                    const template = document.getElementById(templateId);
+                    
+                    if (template) {
+                        const docHtml = template.innerHTML.replace(/"/g, '&quot;'); // Escape quotes for the attribute
+                        const iframeContent = `<iframe class="w-full h-full border-0" srcdoc="${docHtml}" title="${title}"></iframe>`;
+                        showModal(title, iframeContent, true);
+                    }
                 }
             }
         });
