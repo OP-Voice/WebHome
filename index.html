@@ -73,8 +73,7 @@
     <section id="mission" class="py-24 px-6">
         <div class="container mx-auto grid md:grid-cols-3 gap-12 items-center">
             <div class="md:col-span-1">
-                <img id="op-voice-logo"
-                     src="https://raw.githubusercontent.com/OP-Voice/WebHome/main/OP-VoiceLogo.png" 
+                <img src="https://cdn.jsdelivr.net/gh/OP-Voice/WebHome@main/OP-VoiceLogo.png" 
                      alt="Overland Park Voice Logo" 
                      class="rounded-lg mx-auto shadow-lg w-full h-auto object-cover">
             </div>
@@ -742,44 +741,6 @@
 
 
     <script>
-        // --- Logo Error Handling ---
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoImg = document.getElementById('op-voice-logo');
-            if (logoImg) {
-                // Try multiple URLs in order
-                const logoUrls = [
-                    'https://raw.githubusercontent.com/OP-Voice/WebHome/main/OP-VoiceLogo.png',
-                    'https://raw.githubusercontent.com/OP-Voice/WebHome/master/OP-VoiceLogo.png',
-                    'https://github.com/OP-Voice/WebHome/blob/main/OP-VoiceLogo.png?raw=true',
-                    'https://cdn.jsdelivr.net/gh/OP-Voice/WebHome@main/OP-VoiceLogo.png',
-                    'https://placehold.co/600x600/003F5C/FFFFFF?text=OP+Voice+Logo'
-                ];
-                
-                let currentIndex = 0;
-                
-                const tryNextUrl = () => {
-                    if (currentIndex < logoUrls.length - 1) {
-                        currentIndex++;
-                        console.log(`Trying logo URL ${currentIndex}: ${logoUrls[currentIndex]}`);
-                        logoImg.src = logoUrls[currentIndex];
-                    }
-                };
-                
-                logoImg.addEventListener('error', function () {
-                    console.log(`Logo failed to load from: ${this.src}`);
-                    tryNextUrl();
-                });
-                
-                logoImg.addEventListener('load', function () {
-                    console.log(`Logo loaded successfully from: ${this.src}`);
-                });
-                
-                // Start with the first URL
-                console.log(`Starting with logo URL: ${logoUrls[0]}`);
-                logoImg.src = logoUrls[0];
-            }
-        });
-
         // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
