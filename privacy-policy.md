@@ -1,4 +1,4 @@
-**Last updated: July 16, 2025**
+Last updated: July 16, 2025
 
 Overland Park Voice ("us", "we", or "our") operates the opvoice.org website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
@@ -8,18 +8,18 @@ We are committed to respecting and protecting your privacy.
 
 Our goal is to collect as little information as possible. The only personal information we collect is what you voluntarily provide to us.
 
-- **Contact Form:** When you use the contact form on our website, we collect the name, email address, and message you provide. This information is used solely for the purpose of responding to your inquiry or adding you to our mailing list for updates, as requested.
+* **Contact Form:** When you use the contact form on our website, we collect the name, email address, and message you provide. This information is used solely for the purpose of responding to your inquiry or adding you to our mailing list for updates, as requested.
     
-- **Cookies and Tracking:** We do not use cookies or any other tracking technologies on our website. Your visit is private and not monitored by us.
+* **Cookies and Tracking:** We do not use cookies or any other tracking technologies on our website. Your visit is private and not monitored by us.
     
 
 ### How We Use Your Information
 
 The information you provide through our contact form is used to:
 
-- Respond to your questions and comments.
+* Respond to your questions and comments.
     
-- Send you email updates about our advocacy efforts and events, if you have opted in.
+* Send you email updates about our advocacy efforts and events, if you have opted in.
     
 
 ### Third-Party Services
