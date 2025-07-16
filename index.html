@@ -46,11 +46,8 @@
             overflow: hidden;
         }
         /* Styling for generated blog posts */
-        .prose h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+        .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
             color: #2E5339;
-            margin-top: 0.25rem;
         }
         .prose p {
             color: #374151;
@@ -73,8 +70,11 @@
 <body class="bg-brand-off-white text-gray-800 font-sans">
 
     <!-- WIP Banner -->
-    <div class="bg-yellow-400 text-black text-center py-2 font-semibold">
-        Work in Progress: This site is currently under construction. Thank you for your patience!
+    <div class="bg-yellow-300 text-yellow-800 text-center p-4 font-semibold text-lg flex items-center justify-center space-x-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.03-1.742 3.03H4.42c-1.532 0-2.492-1.696-1.742-3.03l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+        </svg>
+        <span>Work in Progress: This site is currently under construction.</span>
     </div>
 
     <!-- Header & Navigation -->
@@ -82,9 +82,6 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <svg role="img" aria-label="Overland Park Voice Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-10 w-10 text-brand-light-green">
-                        <path fill="currentColor" d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z" />
-                    </svg>
                     <span class="text-2xl font-bold text-brand-dark-green">Overland Park Voice</span>
                 </div>
                 <nav class="hidden md:flex items-center space-x-6">
@@ -272,22 +269,21 @@
                         </div>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-xl">
-                        <form id="contact-form">
+                        <form action="mailto:overlandpark.voice@gmail.com" method="post" enctype="text/plain">
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green" required>
+                                <input type="text" id="name" name="Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green" required>
                             </div>
                             <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green" required>
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email Address</label>
+                                <input type="email" id="email" name="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green" required>
                             </div>
                              <div class="mb-6">
                                 <label for="message" class="block text-gray-700 font-semibold mb-2">Message (Optional)</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green"></textarea>
+                                <textarea id="message" name="Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-light-green"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-brand-light-green text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-brand-dark-green transition-colors">Sign Up for Updates</button>
+                            <button type="submit" class="w-full bg-brand-light-green text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-brand-dark-green transition-colors">Send Email via Your Mail App</button>
                         </form>
-                        <div id="form-feedback" class="mt-4 text-center"></div>
                     </div>
                 </div>
             </div>
@@ -299,9 +295,6 @@
         <div class="container mx-auto px-6 text-center text-gray-600">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                  <div class="flex items-center space-x-2">
-                    <svg role="img" aria-label="Overland Park Voice Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-brand-light-green">
-                        <path fill="currentColor" d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z" />
-                    </svg>
                     <span class="font-bold text-brand-dark-green">OPVOICE.ORG</span>
                 </div>
                 <p>&copy; 2024 Overland Park Voice. All Rights Reserved.</p>
@@ -368,19 +361,6 @@
             });
         });
 
-        // Contact Form Submission
-        const contactForm = document.getElementById('contact-form');
-        const formFeedback = document.getElementById('form-feedback');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            formFeedback.textContent = 'Thank you for signing up! We will be in touch.';
-            formFeedback.className = 'mt-4 text-center text-green-700 font-semibold';
-            contactForm.reset();
-            setTimeout(() => {
-                formFeedback.textContent = '';
-            }, 5000);
-        });
-
         // --- Dynamic Modal Functionality ---
 
         const updatesModal = document.getElementById('updates-modal');
@@ -445,7 +425,10 @@
                 }
 
                 // 2. Fetch content for each file
-                const showdownConverter = new showdown.Converter();
+                const showdownConverter = new showdown.Converter({
+                    noHeaderId: true, // Prevents automatic IDs on headers
+                    headerLevelStart: 3 // Starts headings at <h3>
+                });
                 let postCount = 0;
                 for (const file of markdownFiles) {
                     const postResponse = await fetch(file.download_url);
@@ -458,16 +441,20 @@
                     // 4. Create and append the post element
                     const postElement = document.createElement('article');
                     postElement.innerHTML = `
-                        <p class="text-sm text-gray-500">${attributes.date || ''}</p>
-                        <div class="prose">${htmlContent}</div>
+                        <p class="text-sm text-gray-500 mb-2">${attributes.date || ''}</p>
+                        <h2 class="text-2xl font-bold text-brand-dark-green mb-3">${attributes.title || ''}</h2>
+                        <div class="prose max-w-none">${htmlContent}</div>
                     `;
                     // Insert a separator before each post except the first one
                     if (postCount > 0) {
                         const hr = document.createElement('hr');
-                        hr.className = 'my-8';
-                        postsContainer.appendChild(hr);
+                        hr.className = 'my-8 border-gray-200';
+                        postsContainer.insertBefore(hr, postsContainer.firstChild);
+                        postsContainer.insertBefore(postElement, postsContainer.firstChild);
+
+                    } else {
+                         postsContainer.appendChild(postElement);
                     }
-                    postsContainer.appendChild(postElement);
                     postCount++;
                 }
 
