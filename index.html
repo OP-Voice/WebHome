@@ -78,7 +78,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <svg role="img" aria-label="Overland Park Voice Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-10 w-10 text-brand-light-green">
-                        <path fill="currentColor" d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H11V21A1,1 0 0,0 12,22A1,1 0 0,0 13,21V18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2Z" />
+                        <path fill="currentColor" d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z" />
                     </svg>
                     <span class="text-2xl font-bold text-brand-dark-green">Overland Park Voice</span>
                 </div>
@@ -295,7 +295,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                  <div class="flex items-center space-x-2">
                     <svg role="img" aria-label="Overland Park Voice Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-brand-light-green">
-                        <path fill="currentColor" d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H11V21A1,1 0 0,0 12,22A1,1 0 0,0 13,21V18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2Z" />
+                        <path fill="currentColor" d="M17 12h2L12 2 5.05 12H7l-3.9 6h6.92v4h3.96v-4H21z" />
                     </svg>
                     <span class="font-bold text-brand-dark-green">OPVOICE.ORG</span>
                 </div>
@@ -387,7 +387,7 @@
         const loadingIndicator = document.getElementById('loading-indicator');
 
         // IMPORTANT: Configure your GitHub repository here
-        const repo = 'OP-Voice/WebHome'; // e.g., 'opvoice/website'
+        const repo = 'OP-Voice/WebHome';
         const updatesPath = 'updates';
 
         const openModal = () => {
@@ -416,7 +416,9 @@
             loadingIndicator.classList.remove('hidden');
             postsContainer.innerHTML = '';
             
-            if (repo === 'OP-Voice/WebHome') {
+            // This is a placeholder for development. Replace with your actual repo.
+            const placeholderRepo = 'OP-Voice/WebHome';
+            if (repo === placeholderRepo) {
                 postsContainer.innerHTML = `<p class="text-red-600 text-center">Please configure your GitHub repository in the script tag at the bottom of the HTML file.</p>`;
                 loadingIndicator.classList.add('hidden');
                 return;
@@ -434,13 +436,14 @@
                     .sort((a, b) => b.name.localeCompare(a.name));
 
                 if (markdownFiles.length === 0) {
-                    postsContainer.innerHTML = `<p class="text-gray-600 text-center">No updates found.</p>`;
+                    postsContainer.innerHTML = `<p class="text-gray-600 text-center">No updates found in the 'updates' folder.</p>`;
                     loadingIndicator.classList.add('hidden');
                     return;
                 }
 
                 // 2. Fetch content for each file
                 const showdownConverter = new showdown.Converter();
+                let postCount = 0;
                 for (const file of markdownFiles) {
                     const postResponse = await fetch(file.download_url);
                     const markdown = await postResponse.text();
@@ -456,16 +459,18 @@
                         <div class="prose">${htmlContent}</div>
                     `;
                     // Insert a separator before each post except the first one
-                    if (postsContainer.children.length > 0) {
+                    if (postCount > 0) {
                         const hr = document.createElement('hr');
+                        hr.className = 'my-8';
                         postsContainer.appendChild(hr);
                     }
                     postsContainer.appendChild(postElement);
+                    postCount++;
                 }
 
             } catch (error) {
                 console.error('Error loading updates:', error);
-                postsContainer.innerHTML = `<p class="text-red-600 text-center">Failed to load updates. Please check the console for details.</p>`;
+                postsContainer.innerHTML = `<p class="text-red-600 text-center">Failed to load updates. Please check the repository name and that the 'updates' folder exists.</p>`;
             } finally {
                 loadingIndicator.classList.add('hidden');
             }
