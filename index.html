@@ -48,10 +48,12 @@
         /* Styling for generated blog posts and privacy policy */
         .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
             color: #2E5339;
+            margin-bottom: 0.5rem; /* Added margin for spacing */
         }
         .prose p {
             color: #374151;
-            margin-top: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem; /* Added margin for spacing */
         }
         .prose a {
             color: #6A994E;
@@ -63,7 +65,11 @@
         .prose ul {
             list-style-position: inside;
             list-style-type: disc;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .prose li {
+            margin-bottom: 0.25rem;
         }
     </style>
 </head>
@@ -552,7 +558,7 @@
                 const markdown = await response.text();
                 // Use parseFrontMatter to safely strip any potential front-matter from the privacy policy file
                 const { body } = parseFrontMatter(markdown);
-                const showdownConverter = new showdown.Converter({ tables: true, simpleLineBreaks: true });
+                const showdownConverter = new showdown.Converter({ tables: true });
                 const htmlContent = showdownConverter.makeHtml(body);
                 privacyContainer.innerHTML = htmlContent;
 
@@ -582,4 +588,4 @@
         }
     </script>
 </body>
-</html>
+</ht
