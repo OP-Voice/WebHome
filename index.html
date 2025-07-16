@@ -550,8 +550,10 @@
                     throw new Error(`Could not load privacy-policy.md. Make sure the file exists in the root of your repository on the 'main' branch.`);
                 }
                 const markdown = await response.text();
-                const showdownConverter = new showdown.Converter();
-                const htmlContent = showdownConverter.makeHtml(markdown);
+                // Use parseFrontMatter to safely strip any potential front-matter from the privacy policy file
+                const { body } = parseFrontMatter(markdown);
+                const showdownConverter = new showdown.Converter({ tables: true, simpleLineBreaks: true });
+                const htmlContent = showdownConverter.makeHtml(body);
                 privacyContainer.innerHTML = htmlContent;
 
             } catch (error) {
