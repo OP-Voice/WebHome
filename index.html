@@ -264,9 +264,101 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(106, 153, 78, 0.4);
         }
+
+        /* Sticky Header Styles */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(106, 153, 78, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-header.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-header .nav-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sticky-header .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6A994E, #2E5339);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .sticky-header .nav-item:hover::before {
+            width: 100%;
+        }
+
+        .sticky-header .cta-button {
+            background: linear-gradient(135deg, #6A994E 0%, #2E5339 100%);
+            box-shadow: 0 2px 8px rgba(106, 153, 78, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-header .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(106, 153, 78, 0.4);
+        }
     </style>
 </head>
 <body class="bg-brand-gray text-neutral-700 font-sans">
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="OPVoiceLogoCROP_v-1.14.png" alt="Overland Park Voice Logo" class="w-8 h-8">
+                    <a href="index.html" class="text-xl font-bold logo-gradient hover:opacity-80 transition-opacity">Overland Park Voice</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Home</a>
+                    <a href="mission.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Our Mission</a>
+                    <a href="launch.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Community Launchpad</a>
+                    <a href="localinfo.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Local Info</a>
+                    <a href="updates.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">News</a>
+                    <div class="w-px h-5 bg-neutral-300 mx-2"></div>
+                    <a href="#get-involved" class="cta-button text-white px-5 py-2 rounded-full font-semibold transition-all text-sm">Join Us</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="sticky-mobile-menu-button" class="text-brand-dark-green focus:outline-none p-2 rounded-lg hover:bg-brand-light-green/10 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu for Sticky Header -->
+        <div id="sticky-mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-neutral-200">
+            <div class="px-6 py-4 space-y-1">
+                <a href="index.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Home</a>
+                <a href="mission.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Our Mission</a>
+                <a href="launch.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Community Launchpad</a>
+                <a href="localinfo.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Local Info</a>
+                <a href="updates.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">News</a>
+                <div class="pt-2 mt-2 border-t border-neutral-100">
+                    <a href="#get-involved" class="block cta-button text-white text-center px-5 py-2 rounded-lg font-semibold text-sm">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main>
@@ -280,15 +372,37 @@
                 <h1 class="text-4xl md:text-6xl font-bold text-brand-dark-green leading-tight">Completing the Civic Dialogue.</h1>
                 <p class="mt-6 text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">We empower Overland Park's community workforce by making local government accessible, responsive, and a worthwhile investment of your time.</p>
 
-                <div class="mt-10 flex flex-wrap justify-center items-center gap-4">
-                    <!-- Primary Action Buttons -->
-                    <a href="mission.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Our Mission</a>
-                    
-                    <!-- Navigation Buttons -->
-                    <a href="launch.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Community Launchpad</a>
-                    <a href="localinfo.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Local Info</a>
-                    <a href="updates.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">News</a>
-                    <a href="#get-involved" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Get Involved</a>
+                <div class="mt-10">
+                    <!-- Desktop Navigation Buttons -->
+                    <div class="hidden md:flex flex-wrap justify-center items-center gap-4">
+                        <!-- Primary Action Buttons -->
+                        <a href="mission.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Our Mission</a>
+                        
+                        <!-- Navigation Buttons -->
+                        <a href="launch.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Community Launchpad</a>
+                        <a href="localinfo.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Local Info</a>
+                        <a href="updates.html" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">News</a>
+                        <a href="#get-involved" class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200">Get Involved</a>
+                    </div>
+
+                    <!-- Mobile Hamburger Menu -->
+                    <div class="md:hidden">
+                        <button id="hero-mobile-menu-button" class="bg-white text-brand-dark-green px-6 py-3 rounded-full font-bold text-lg hover:bg-neutral-100 transition-all shadow-lg border border-neutral-200 flex items-center space-x-2 mx-auto">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                            <span>Explore Our Site</span>
+                        </button>
+                        
+                        <!-- Mobile Menu Dropdown -->
+                        <div id="hero-mobile-menu" class="hidden mt-4 bg-white rounded-lg shadow-xl border border-neutral-200 overflow-hidden mx-auto max-w-sm">
+                            <a href="mission.html" class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0">Our Mission</a>
+                            <a href="launch.html" class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0">Community Launchpad</a>
+                            <a href="localinfo.html" class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0">Local Info</a>
+                            <a href="updates.html" class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0">News</a>
+                            <a href="#get-involved" class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0">Get Involved</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -742,6 +856,63 @@
                     accordionIcon.classList.toggle('rotate-180');
                 });
             });
+
+            // Hero Mobile Menu Toggle
+            const heroMobileMenuButton = document.getElementById('hero-mobile-menu-button');
+            const heroMobileMenu = document.getElementById('hero-mobile-menu');
+            
+            if (heroMobileMenuButton && heroMobileMenu) {
+                heroMobileMenuButton.addEventListener('click', () => {
+                    heroMobileMenu.classList.toggle('hidden');
+                    
+                    // Update button icon and text
+                    const icon = heroMobileMenuButton.querySelector('svg');
+                    const text = heroMobileMenuButton.querySelector('span');
+                    
+                    if (heroMobileMenu.classList.contains('hidden')) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+                        text.textContent = 'Explore Our Site';
+                    } else {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                        text.textContent = 'Close Menu';
+                    }
+                });
+            }
+
+            // Sticky Header Functionality
+            const stickyHeader = document.querySelector('.sticky-header');
+            const heroSection = document.querySelector('.hero-bg');
+            const wipBanner = document.querySelector('.bg-warn-300');
+            const stickyMobileMenuButton = document.getElementById('sticky-mobile-menu-button');
+            const stickyMobileMenu = document.getElementById('sticky-mobile-menu');
+
+            // Calculate when to show sticky header (after hero + WIP banner)
+            function updateStickyHeader() {
+                if (heroSection && wipBanner && stickyHeader) {
+                    const heroHeight = heroSection.offsetHeight;
+                    const wipHeight = wipBanner.offsetHeight;
+                    const triggerPoint = heroHeight + wipHeight - 100; // Show 100px before fully scrolled past
+                    
+                    if (window.scrollY > triggerPoint) {
+                        stickyHeader.classList.add('visible');
+                    } else {
+                        stickyHeader.classList.remove('visible');
+                    }
+                }
+            }
+
+            // Sticky Mobile Menu Toggle
+            if (stickyMobileMenuButton && stickyMobileMenu) {
+                stickyMobileMenuButton.addEventListener('click', () => {
+                    stickyMobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Scroll event listener for sticky header
+            window.addEventListener('scroll', updateStickyHeader);
+            
+            // Initial check
+            updateStickyHeader();
 
         // --- Formspree Form Submission ---
         const form = document.getElementById('contact-form');
