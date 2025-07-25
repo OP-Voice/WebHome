@@ -175,6 +175,31 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #F0F7EC 0%, #DCEECC 100%);
+            --hero-animation: heroBackgroundShift 12s ease-in-out infinite;
+            --hero-counter-animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
+        }
+        
+        /* Mobile-first: disable animations by default */
+        @media screen and (max-width: 767px) {
+            .hero-bg {
+                --hero-animation: none;
+                --hero-counter-animation: none;
+            }
+        }
+        
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg {
+                --hero-animation: none !important;
+                --hero-counter-animation: none !important;
+            }
+            
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+            }
         }
         
         .hero-bg::before {
@@ -201,7 +226,6 @@
                 radial-gradient(circle at 85% 85%, rgba(106, 153, 78, 0.2) 0%, transparent 22%),
                 radial-gradient(circle at 15% 15%, rgba(46, 83, 57, 0.16) 0%, transparent 15%),
                 radial-gradient(ellipse 130% 100% at 50% 50%, rgba(106, 153, 78, 0.14) 0%, transparent 50%);
-            animation: heroBackgroundShift 12s ease-in-out infinite;
             z-index: 0;
         }
         
@@ -218,13 +242,83 @@
                 radial-gradient(circle at 20% 30%, rgba(106, 153, 78, 0.2) 0%, transparent 30%),
                 radial-gradient(circle at 80% 80%, rgba(46, 83, 57, 0.18) 0%, transparent 25%),
                 radial-gradient(ellipse 90% 70% at 60% 40%, rgba(106, 153, 78, 0.15) 0%, transparent 35%);
-            animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
             z-index: 1;
         }
         
         .hero-bg > * {
             position: relative;
             z-index: 2;
+        }
+        
+        /* Animation only on desktop */
+        @media (min-width: 768px) {
+            .hero-bg {
+                --hero-animation: heroBackgroundShift 12s ease-in-out infinite;
+                --hero-counter-animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
+            }
+            
+            .hero-bg::before {
+                animation: var(--hero-animation);
+            }
+            
+            .hero-bg::after {
+                animation: var(--hero-counter-animation);
+            }
+        }
+        
+        /* MOBILE OVERRIDE - Aggressive animation blocking */
+        @media screen and (max-width: 767px) {
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                animation-name: none !important;
+                animation-duration: 0s !important;
+                animation-iteration-count: 0 !important;
+                animation-play-state: paused !important;
+                transform: translate3d(0, 0, 0) !important;
+                filter: none !important;
+                transition: none !important;
+                will-change: auto !important;
+            }
+            
+            /* Force static positioning and disable all transforms */
+            .hero-bg {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+            }
+            
+            .hero-bg::before {
+                animation: none !important;
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg) !important;
+                filter: none !important;
+                position: absolute !important;
+                top: -50% !important;
+                left: -50% !important;
+                width: 200% !important;
+                height: 200% !important;
+            }
+            
+            .hero-bg::after {
+                animation: none !important;
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg) !important;
+                filter: none !important;
+                position: absolute !important;
+                top: -30% !important;
+                left: -30% !important;
+                width: 160% !important;
+                height: 160% !important;
+            }
+        }
+        
+        /* Additional mobile check for very small screens */
+        @media screen and (max-width: 480px) {
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+            }
         }
         
         @keyframes heroBackgroundShift {
