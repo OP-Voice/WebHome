@@ -69,6 +69,16 @@ function injectSharedStyles() {
             z-index: 2;
         }
         
+        /* Disable animations on mobile - explicitly set to none */
+        @media (max-width: 767px) {
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: translate(0, 0) rotate(0deg) scale(1) !important;
+                filter: none !important;
+            }
+        }
+        
         /* Animation only on desktop */
         @media (min-width: 768px) {
             .hero-bg::before {
