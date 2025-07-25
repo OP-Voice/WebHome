@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Advisory Commission Research | Overland Park Voice</title>
+    <meta name="description" content="Research and proposal for establishing a Housing Advisory Commission in Overland Park to ensure renter representation in housing policy decisions.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+
+    <!-- Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#2E5339',
+                            dark50: '#EDF3EF',
+                            dark100: '#D4E1D9',
+                            dark200: '#A8C0AF',
+                            dark300: '#7EA187',
+                            dark400: '#5F896A',
+                            dark500: '#4B7358',
+                            dark600: '#3E624B',
+                            dark700: '#2E5339', // base
+                            dark800: '#23402C',
+                            dark900: '#182B1D',
+                            light: '#6A994E',
+                            light50: '#F0F7EC',
+                            light100: '#DCEECC',
+                            light200: '#C0E0A8',
+                            light300: '#A3D184',
+                            light400: '#88C364',
+                            light500: '#6A994E', // base
+                            light600: '#598443',
+                            light700: '#476D38',
+                            light800: '#36572C',
+                            light900: '#254020',
+                            gray: '#F5F5F5',
+                            offwhite: '#FAFAFA',
+                            surface0: '#FFFFFF',
+                            surface50: '#FAFAFA',
+                            surface100: '#F5F5F5',
+                            surface200: '#ECECEC',
+                            surface300: '#E0E0E0',
+                        },
+                        neutral: {
+                            900: '#1F2937',
+                            700: '#374151',
+                            600: '#4B5563',
+                            500: '#6B7280',
+                            300: '#D1D5DB',
+                            200: '#E5E7EB',
+                            50: '#F9FAFB',
+                        },
+                        info: { DEFAULT: '#FFA600' },
+                        warn: {
+                            300: '#FDE047',
+                            800: '#854D0E',
+                        },
+                        alert: {
+                            DEFAULT: '#D90429',
+                            400: '#F87171',
+                            50: '#FEF2F2',
+                        },
+                        // Legacy support - keeping old tokens for compatibility
+                        'brand-dark-green': '#2E5339',
+                        'brand-light-green': '#6A994E',
+                        'brand-gray': '#F5F5F5',
+                        'brand-off-white': '#FAFAFA',
+                        'alert-red': '#D90429',
+                        'info-orange': '#FFA600',
+                        'warn-yellow': '#FFCC02'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #6A994E 0%, #2E5339 100%);
+        }
+        
+        /* Sticky Header Styles */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(106, 153, 78, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-header.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-header .nav-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sticky-header .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6A994E, #2E5339);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .sticky-header .nav-item:hover::before {
+            width: 100%;
+        }
+
+        .sticky-header .cta-button {
+            background: linear-gradient(135deg, #6A994E 0%, #2E5339 100%);
+            box-shadow: 0 2px 8px rgba(106, 153, 78, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-header .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(106, 153, 78, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-gray text-neutral-700 font-sans">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-6">
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark-green mb-4">Housing Advisory Commission</h1>
+                <p class="text-xl text-neutral-600 max-w-3xl mx-auto">A research-backed proposal to ensure renter representation in Overland Park's housing policy decisions.</p>
+            </div>
+
+            <!-- Research Content -->
+            <div class="max-w-6xl mx-auto">
+                <!-- The Situation Section -->
+                <section id="situation" class="mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Situation in Overland Park</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-brand-dark-green text-white rounded-lg p-6 flex flex-col items-center justify-center text-center">
+                            <div class="text-6xl font-extrabold leading-none">38%</div>
+                            <div class="text-lg font-medium mt-2">of Overland Park households are renters. That's over 31,000 homes.</div>
+                        </div>
+                        <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-100">
+                            <h3 class="text-xl font-bold text-center mb-4">Renter vs. Owner Households</h3>
+                            <div class="chart-container" style="position: relative; width: 100%; margin: 0 auto; max-width: 450px; height: 320px;">
+                                <canvas id="renterOwnerChart"></canvas>
+                            </div>
+                            <p class="text-sm text-neutral-600 mt-4 text-center">Renters form a significant and vital part of the city's foundation, yet lack a formal voice in civic matters.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Representation Gap Section -->
+                <section id="representation" class="mb-12 bg-neutral-50 rounded-lg shadow-md p-6 md:p-8 border border-neutral-100">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Representation Gap</h2>
+                    <p class="text-center text-neutral-600 max-w-3xl mx-auto mb-8">While the city provides channels for resident feedback, the primary formal structure is designed for homeowners, leaving a substantial part of the community without dedicated representation.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="border-2 border-gray-400 bg-neutral-50 p-4 rounded-lg text-center font-semibold shadow-sm">Residents</div>
+                        <div class="text-neutral-500 text-2xl mx-2 my-2">&rarr;</div>
+                        <div class="border-2 border-gray-400 bg-neutral-50 p-4 rounded-lg text-center font-semibold shadow-sm">Neighborhood Executive Committee (HOAs & Homeowners)</div>
+                        <div class="text-neutral-500 text-2xl mx-2 my-2">&rarr;</div>
+                        <div class="border-2 border-gray-400 bg-neutral-50 p-4 rounded-lg text-center font-semibold shadow-sm">City Council</div>
+                    </div>
+                    <div class="flex items-center justify-center mt-6">
+                        <div class="border-2 border-red-400 border-dashed bg-red-50 text-red-600 p-4 rounded-lg text-center font-semibold">Renters (38% of Households) Have No Formal Channel</div>
+                    </div>
+                </section>
+                
+                <!-- Affordability Section -->
+                <section id="affordability" class="mb-12">
+                    <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-100">
+                        <h2 class="text-3xl font-bold text-center mb-2">The Widespread Affordability Gap</h2>
+                        <p class="text-sm text-neutral-600 mb-4 text-center max-w-4xl mx-auto">Purple = 30% affordable portion • Dark Blue = remaining income • Red shaded = affordability gap • <span style="color:#D90429; font-weight:bold;">Red line = $1,550 average rent</span></p>
+                        <div class="wide-chart-container" style="position: relative; width: 100%; height: 400px; max-height: 50vh;">
+                            <canvas id="affordabilityChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Solution Section -->
+                <section id="solution" class="mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8">A Measured, Low-Cost Solution</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-100">
+                            <h3 class="text-xl font-bold text-center mb-4">Proposal: Housing Advisory Commission</h3>
+                            <ul class="space-y-4 text-neutral-700">
+                                <li class="flex items-start">
+                                    <span class="text-brand-light-green font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-neutral-900">Advisory Role:</strong> To study housing issues and provide informed, balanced recommendations to the City Council.</div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-light-green font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-neutral-900">Inclusive Representation:</strong> At least one-third of seats reserved for renters, ensuring their perspective is heard.</div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-light-green font-bold mr-3 mt-1">&#10003;</span>
+                                    <div><strong class="font-semibold text-neutral-900">Collaborative Focus:</strong> A forum for renters, homeowners, developers, and the city to find common ground.</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-100">
+                            <h3 class="text-xl font-bold text-center mb-4">A 1-in-1,000 Investment</h3>
+                            <p class="text-sm text-center text-neutral-600 mb-4">This proposal asks for just <strong>one dollar</strong> for every <strong>$1,000</strong> in the General Fund. The single <span style="color:#FFA600; font-weight:bold;">yellow square</span> represents the commission's budget relative to the fund.</p>
+                            <div id="waffleChart" style="display: grid; grid-template-columns: repeat(40, 1fr); gap: 3px; max-width: 20rem; margin: 0 auto;"></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Conclusion Section -->
+                <section id="conclusion" class="bg-neutral-50 rounded-lg shadow-md p-6 md:p-8 border border-neutral-100">
+                    <h2 class="text-3xl font-bold text-center mb-8">The Path to a More Inclusive Overland Park</h2>
+                    <div class="max-w-md mx-auto">
+                        <div class="relative">
+                            <div style="position: absolute; left: 0.5rem; top: 1.75rem; bottom: 0; width: 2px; background-color: #e5e7eb;"></div>
+                            <div style="position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem;">
+                                <div style="position: absolute; left: 0; top: 0.25rem; height: 1.25rem; width: 1.25rem; background-color: #FFA600; border-radius: 9999px; border: 3px solid white;"></div>
+                                <h4 class="font-bold">Public Testimony</h4>
+                                <p class="text-sm text-neutral-600">The conversation begins by highlighting the need for renter representation.</p>
+                            </div>
+                            <div style="position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem;">
+                                <div style="position: absolute; left: 0; top: 0.25rem; height: 1.25rem; width: 1.25rem; background-color: #FFA600; border-radius: 9999px; border: 3px solid white;"></div>
+                                <h4 class="font-bold">Council Consideration & Budget Allocation</h4>
+                                <p class="text-sm text-neutral-600">The City Council agrees to the modest 0.1% investment.</p>
+                            </div>
+                            <div style="position: relative; padding-left: 2.5rem;">
+                                <div style="position: absolute; left: 0; top: 0.25rem; height: 1.25rem; width: 1.25rem; background-color: #FFA600; border-radius: 9999px; border: 3px solid white;"></div>
+                                <h4 class="font-bold">Commission Formation</h4>
+                                <p class="text-sm text-neutral-600">A diverse commission with renter, homeowner, and industry voices is formed.</p>
+                                <p class="text-sm text-neutral-600">Overland Park benefits from smarter, more equitable housing policies for all.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-8 text-lg text-neutral-700">Establishing a Housing Advisory Commission is a vital step toward ensuring the people who keep our city vibrant can afford to call it home.</p>
+                </section>
+                
+                <!-- Data Sources -->
+                <footer class="text-center py-6 border-t border-neutral-200 mt-12">
+                    <p class="text-xs text-neutral-500">Data sourced from resident testimony, the 2024 City of Overland Park Adopted Budget, and salary data from ZipRecruiter and the US Social Security Administration.</p>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Initialize charts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeHousingCharts();
+        });
+
+        function initializeHousingCharts() {
+            // Renter vs Owner Doughnut Chart
+            const renterOwnerCtx = document.getElementById('renterOwnerChart').getContext('2d');
+            new Chart(renterOwnerCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Renters', 'Homeowners'],
+                    datasets: [{
+                        label: 'Household Type',
+                        data: [38, 62],
+                        backgroundColor: ['#6A994E', '#2E5339'],
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    return `${label}: ${value}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Affordability Chart
+            const affordabilityLabels = ['Retiree', 'Preschool Teacher', 'City Admin Staff', 'Firefighter'];
+            const affordableData = [617, 851, 1124, 1472];
+            const remainingData = [1438, 1984, 2622, 3436];
+            const avgRent = 1550;
+
+            const affordabilityChartData = {
+                labels: affordabilityLabels,
+                datasets:[
+                    { label:'30% Affordable Portion', data: affordableData, backgroundColor: '#6A994E' },
+                    { label:'Remaining Income', data: remainingData, backgroundColor: '#2E5339' }
+                ]
+            };
+
+            // Create annotations for the affordability chart
+            const affordabilityAnnotations = {
+                avgLine: {
+                    type: 'line',
+                    xMin: avgRent,
+                    xMax: avgRent,
+                    borderColor: '#D90429',
+                    borderWidth: 2,
+                    label: {
+                        content: 'Average Rent: $1,550',
+                        enabled: true,
+                        position: 'start',
+                        backgroundColor: 'rgba(217, 4, 41, 0.8)',
+                        color: '#fff',
+                        font: { weight:'bold', size:10 }
+                    }
+                }
+            };
+
+            // Add gap annotations for each job category
+            affordableData.forEach((val, i) => {
+                if (avgRent > val) {
+                    affordabilityAnnotations['gapBox' + i] = {
+                        type: 'box',
+                        xMin: val,
+                        xMax: avgRent,
+                        yMin: i - 0.4,
+                        yMax: i + 0.4,
+                        backgroundColor: 'rgba(217, 4, 41, 0.35)',
+                        borderWidth: 0
+                    };
+                    affordabilityAnnotations['gapLabel' + i] = {
+                        type: 'label',
+                        xValue: (avgRent + val) / 2,
+                        yValue: i,
+                        content: ['$' + (avgRent - val) + ' gap'],
+                        color: '#FFFFFF',
+                        font: { weight: 'bold', size: 12 },
+                        position: 'center'
+                    };
+                }
+            });
+
+            new Chart(document.getElementById('affordabilityChart'), {
+                type: 'bar',
+                data: affordabilityChartData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => `${ctx.dataset.label}: $${ctx.parsed.x.toLocaleString()}`
+                            }
+                        },
+                        annotation: {
+                            annotations: affordabilityAnnotations
+                        },
+                        legend: {
+                            position:'bottom'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                callback: v => `$${v.toLocaleString()}`
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    }
+                }
+            });
+
+            // Waffle Chart (1000 squares, 1 orange for budget proportion)
+            const waffleContainer = document.getElementById('waffleChart');
+            waffleContainer.innerHTML = ''; // Clear any existing content
+            
+            for (let i = 0; i < 1000; i++) {
+                const cell = document.createElement('div');
+                cell.style.width = '100%';
+                cell.style.paddingBottom = '100%';
+                cell.style.borderRadius = '2px';
+                
+                if (i === 0) {
+                    cell.style.backgroundColor = '#FFA600'; // info-orange
+                } else {
+                    cell.style.backgroundColor = '#2E5339'; // brand-dark
+                }
+                waffleContainer.appendChild(cell);
+            }
+        }
+    </script>
+
+    <!-- Load shared components -->
+    <script src="../shared-components.js"></script>
+</body>
+</html>

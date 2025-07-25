@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Our Initiatives | Overland Park Voice</title>
+    <meta name="title" content="Our Initiatives | Overland Park Voice">
+    <meta name="description" content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change.">
+    <meta name="keywords" content="Overland Park initiatives, housing advocacy, government transparency, civic initiatives, local policy, community programs, OP advocacy">
+    <meta name="author" content="Overland Park Voice">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opvoice.org/initiatives.html">
+    <meta property="og:title" content="Our Initiatives | Overland Park Voice">
+    <meta property="og:description" content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change.">
+    <meta property="og:image" content="https://opvoice.org/BackEnd/OPVoiceLogo_v-1.14.png">
+    <meta property="og:site_name" content="Overland Park Voice">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://opvoice.org/initiatives.html">
+    <meta property="twitter:title" content="Our Initiatives | Overland Park Voice">
+    <meta property="twitter:description" content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change.">
+    <meta property="twitter:image" content="https://opvoice.org/BackEnd/OPVoiceLogo_v-1.14.png">
+    <meta property="twitter:site" content="@VoiceOf_OP">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opvoice.org/initiatives.html">
+    
     <link rel="icon" type="image/png" href="BackEnd/OPVoiceLogoCROP_v-1.14.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,55 +76,6 @@
     <style>
         html {
             scroll-behavior: smooth;
-        }
-        
-        .header-bg {
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(106, 153, 78, 0.18) 0%, transparent 45%),
-                radial-gradient(circle at 85% 30%, rgba(46, 83, 57, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(106, 153, 78, 0.12) 0%, transparent 35%),
-                linear-gradient(135deg, rgba(220, 238, 204, 0.85) 0%, rgba(240, 247, 236, 0.9) 50%, rgba(245, 245, 245, 0.85) 100%);
-            border-bottom: 2px solid rgba(106, 153, 78, 0.25);
-            box-shadow: 0 2px 10px rgba(106, 153, 78, 0.1);
-        }
-        
-        .logo-gradient {
-            background: linear-gradient(135deg, #2E5339 0%, #6A994E 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-item {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #6A994E, #2E5339);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-item:hover::before {
-            width: 100%;
-        }
-        
-        .cta-button {
-            background: linear-gradient(135deg, #6A994E 0%, #2E5339 100%);
-            box-shadow: 0 4px 15px rgba(106, 153, 78, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(106, 153, 78, 0.4);
         }
 
         .initiative-card {
@@ -148,69 +126,17 @@
     </style>
 </head>
 <body class="bg-brand-gray text-neutral-700 font-sans">
-    <!-- Header -->
-    <header class="header-bg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="BackEnd/OPVoiceLogoCROP_v-1.14.png" alt="Overland Park Voice Logo" class="w-10 h-10">
-                    <a href="index.html" class="text-2xl font-bold logo-gradient hover:opacity-80 transition-opacity">Overland Park Voice</a>
-                </div>
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Home</a>
-                    <a href="mission.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Our Mission</a>
-                    <a href="initiatives.html" class="nav-item text-brand-light-green font-semibold">Our Initiatives</a>
-                    <a href="launch.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Community Launchpad</a>
-                    <a href="localinfo.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Local Info</a>
-                    <a href="updates.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">News</a>
-                    <div class="w-px h-5 bg-neutral-300 mx-2"></div>
-                    <a href="index.html#get-involved" class="cta-button text-white px-6 py-2 rounded-full font-semibold transition-all">Join Us</a>
-                </nav>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-brand-dark-green focus:outline-none p-2 rounded-lg hover:bg-brand-light-green/10 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-neutral-200">
-            <div class="px-6 py-4 space-y-1">
-                <a href="index.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Home</a>
-                <a href="mission.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Our Mission</a>
-                <a href="initiatives.html" class="block py-2 px-4 text-brand-light-green bg-brand-light-green/10 font-semibold rounded-lg">Our Initiatives</a>
-                <a href="launch.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Community Launchpad</a>
-                <a href="localinfo.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">Local Info</a>
-                <a href="updates.html" class="block py-2 px-4 text-neutral-700 hover:text-brand-light-green hover:bg-brand-light-green/5 font-medium rounded-lg transition-colors">News</a>
-                <div class="pt-2 mt-2 border-t border-neutral-100">
-                    <a href="index.html#get-involved" class="block cta-button text-white text-center px-6 py-2 rounded-lg font-semibold">Join Us</a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- WIP Banner -->
-    <div class="bg-warn-300 text-warn-800 text-center py-4 px-6">
-        <!-- Compact Warning -->
-        <div class="flex items-center justify-center space-x-2 text-base mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
-            </svg>
-            <span class="font-semibold">Work in Progress: Our initiatives are actively developing.</span>
-        </div>
-        
-        <!-- Compact Message -->
-        <div class="max-w-3xl mx-auto">
-            <p class="text-sm font-medium">We're actively working on these strategic priorities. Content will be updated as our advocacy efforts progress.</p>
-        </div>
-    </div>
+    <!-- Header & Navigation (loaded via JavaScript) -->
+    <div id="header-placeholder"></div>
+    
+    <!-- WIP Banner (loaded via JavaScript) -->
+    <div id="wip-banner-placeholder"></div>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="py-16 bg-neutral-50">
+        <section class="hero-bg py-16 md:py-20">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-brand-dark-green leading-tight mb-6">Our Strategic Initiatives</h1>
                 <p class="text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto mb-8">
@@ -547,53 +473,8 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-gray py-8">
-        <div class="container mx-auto px-6 text-center text-neutral-600">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div class="flex items-center space-x-2">
-                    <img src="BackEnd/OPVoiceLogoCROP_v-1.14.png" alt="Overland Park Voice Logo" class="w-6 h-6">
-                    <span class="font-bold text-brand-dark-green">OPVOICE.ORG</span>
-                </div>
-                <div class="flex flex-col items-center space-y-2">
-                    <p>&copy; 2024 Overland Park Voice. All Rights Reserved.</p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://x.com/VoiceOf_OP" target="_blank" rel="noopener noreferrer" class="text-neutral-500 hover:text-brand-light-green transition-colors" aria-label="Follow us on X (Twitter)">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61578842542286" target="_blank" rel="noopener noreferrer" class="text-neutral-500 hover:text-brand-light-green transition-colors" aria-label="Follow us on Facebook">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-neutral-500 hover:text-brand-light-green">Privacy Policy</a>
-                    <a href="index.html#get-involved" class="text-neutral-500 hover:text-brand-light-green">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    
-                    // Update button icon
-                    const icon = mobileMenuButton.querySelector('svg path');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
-                    } else {
-                        icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="shared-components.js"></script>
 </body>
 </html>

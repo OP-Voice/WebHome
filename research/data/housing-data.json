@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "topic": "housing-advisory-commission",
+    "lastUpdated": "2024-12-19",
+    "dataSource": "City of Overland Park Budget 2024, ZipRecruiter, SSA",
+    "methodology": "Comparative analysis of household income vs rental costs"
+  },
+  "demographics": {
+    "totalHouseholds": 82000,
+    "renterHouseholds": 31160,
+    "renterPercentage": 38,
+    "ownerHouseholds": 50840,
+    "ownerPercentage": 62
+  },
+  "affordability": {
+    "averageRent": 1550,
+    "jobCategories": [
+      {
+        "title": "Retiree",
+        "monthlyIncome": 2055,
+        "affordablePortion": 617,
+        "gap": 933
+      },
+      {
+        "title": "Preschool Teacher", 
+        "monthlyIncome": 2835,
+        "affordablePortion": 851,
+        "gap": 699
+      },
+      {
+        "title": "City Admin Staff",
+        "monthlyIncome": 3746,
+        "affordablePortion": 1124,
+        "gap": 426
+      },
+      {
+        "title": "Firefighter",
+        "monthlyIncome": 4908,
+        "affordablePortion": 1472,
+        "gap": 78
+      }
+    ]
+  },
+  "budgetImpact": {
+    "generalFundTotal": 100000000,
+    "proposedCommissionBudget": 100000,
+    "percentageOfBudget": 0.1
+  }
+}
