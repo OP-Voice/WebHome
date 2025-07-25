@@ -69,16 +69,6 @@ function injectSharedStyles() {
             z-index: 2;
         }
         
-        /* Disable animations on mobile - explicitly set to none */
-        @media (max-width: 767px) {
-            .hero-bg::before,
-            .hero-bg::after {
-                animation: none !important;
-                transform: translate(0, 0) rotate(0deg) scale(1) !important;
-                filter: none !important;
-            }
-        }
-        
         /* Animation only on desktop */
         @media (min-width: 768px) {
             .hero-bg::before {
@@ -121,6 +111,29 @@ function injectSharedStyles() {
             66% {
                 transform: translate(-16%, 12%) rotate(3deg) scale(0.94);
                 filter: blur(12px);
+            }
+        }
+        
+        /* MOBILE OVERRIDE - Place after keyframes to ensure precedence */
+        @media (max-width: 767px) {
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                animation-name: none !important;
+                animation-duration: 0s !important;
+                animation-iteration-count: 0 !important;
+                transform: translate(0, 0) rotate(0deg) scale(1) !important;
+                filter: none !important;
+                transition: none !important;
+            }
+            
+            /* Completely disable animations on mobile */
+            .hero-bg,
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
             }
         }
         
