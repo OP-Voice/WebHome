@@ -19,6 +19,31 @@ function injectSharedStyles() {
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #F0F7EC 0%, #DCEECC 100%);
+            --hero-animation: heroBackgroundShift 12s ease-in-out infinite;
+            --hero-counter-animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
+        }
+        
+        /* Mobile-first: disable animations by default */
+        @media screen and (max-width: 767px) {
+            .hero-bg {
+                --hero-animation: none;
+                --hero-counter-animation: none;
+            }
+        }
+        
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg {
+                --hero-animation: none !important;
+                --hero-counter-animation: none !important;
+            }
+            
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+            }
         }
         
         .hero-bg::before {
@@ -71,12 +96,17 @@ function injectSharedStyles() {
         
         /* Animation only on desktop */
         @media (min-width: 768px) {
+            .hero-bg {
+                --hero-animation: heroBackgroundShift 12s ease-in-out infinite;
+                --hero-counter-animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
+            }
+            
             .hero-bg::before {
-                animation: heroBackgroundShift 12s ease-in-out infinite;
+                animation: var(--hero-animation);
             }
             
             .hero-bg::after {
-                animation: heroBackgroundCounter 8s ease-in-out infinite reverse;
+                animation: var(--hero-counter-animation);
             }
         }
         
@@ -114,21 +144,53 @@ function injectSharedStyles() {
             }
         }
         
-        /* MOBILE OVERRIDE - Place after keyframes to ensure precedence */
-        @media (max-width: 767px) {
+        /* MOBILE OVERRIDE - Aggressive animation blocking */
+        @media screen and (max-width: 767px) {
             .hero-bg::before,
             .hero-bg::after {
                 animation: none !important;
                 animation-name: none !important;
                 animation-duration: 0s !important;
                 animation-iteration-count: 0 !important;
-                transform: translate(0, 0) rotate(0deg) scale(1) !important;
+                animation-play-state: paused !important;
+                transform: translate3d(0, 0, 0) !important;
                 filter: none !important;
                 transition: none !important;
+                will-change: auto !important;
             }
             
-            /* Completely disable animations on mobile */
-            .hero-bg,
+            /* Force static positioning and disable all transforms */
+            .hero-bg {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+            }
+            
+            .hero-bg::before {
+                animation: none !important;
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg) !important;
+                filter: none !important;
+                position: absolute !important;
+                top: -50% !important;
+                left: -50% !important;
+                width: 200% !important;
+                height: 200% !important;
+            }
+            
+            .hero-bg::after {
+                animation: none !important;
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg) !important;
+                filter: none !important;
+                position: absolute !important;
+                top: -30% !important;
+                left: -30% !important;
+                width: 160% !important;
+                height: 160% !important;
+            }
+        }
+        
+        /* Additional mobile check for very small screens */
+        @media screen and (max-width: 480px) {
             .hero-bg::before,
             .hero-bg::after {
                 animation: none !important;
@@ -485,6 +547,33 @@ function generateWIPBanner() {
 function initializeSharedComponents() {
     // First, inject shared styles
     injectSharedStyles();
+    
+    // Force disable animations on mobile devices via JavaScript
+    if (window.innerWidth <= 767 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const style = document.createElement('style');
+        style.textContent = `
+            .hero-bg::before,
+            .hero-bg::after {
+                animation: none !important;
+                transform: none !important;
+                filter: none !important;
+                transition: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Also remove any existing animations via JavaScript
+        setTimeout(() => {
+            const heroElements = document.querySelectorAll('.hero-bg::before, .hero-bg::after, .hero-bg');
+            heroElements.forEach(el => {
+                if (el.style) {
+                    el.style.animation = 'none';
+                    el.style.transform = 'none';
+                    el.style.filter = 'none';
+                }
+            });
+        }, 100);
+    }
     
     // Insert header if placeholder exists
     const headerPlaceholder = document.getElementById('header-placeholder');
