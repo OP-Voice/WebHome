@@ -1,0 +1,177 @@
+<!-- Shared Head Template for Overland Park Voice -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary Meta Tags -->
+<title>{{PAGE_TITLE}}</title>
+<meta name="title" content="{{PAGE_TITLE}}" />
+<meta name="description" content="{{PAGE_DESCRIPTION}}" />
+<meta name="keywords" content="{{PAGE_KEYWORDS}}" />
+<meta name="author" content="Overland Park Voice" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{PAGE_URL}}" />
+<meta property="og:title" content="{{PAGE_TITLE}}" />
+<meta property="og:description" content="{{PAGE_DESCRIPTION}}" />
+    <meta property="og:image" content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png" />
+<meta property="og:site_name" content="Overland Park Voice" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{PAGE_URL}}" />
+<meta property="twitter:title" content="{{PAGE_TITLE}}" />
+<meta property="twitter:description" content="{{PAGE_DESCRIPTION}}" />
+    <meta property="twitter:image" content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png" />
+<meta property="twitter:site" content="@VoiceOf_OP" />
+<meta property="twitter:creator" content="@VoiceOf_OP" />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="geo.region" content="US-KS" />
+<meta name="geo.placename" content="Overland Park, Kansas" />
+<meta name="geo.position" content="38.9822;-94.6708" />
+<meta name="ICBM" content="38.9822, -94.6708" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{PAGE_URL}}" />
+
+<!-- Favicon and App Icons -->
+<link rel="icon" type="image/png" href="assets/images/logos/OPVoiceLogoCROP_v-1.14.png" />
+<link rel="apple-touch-icon" href="assets/images/logos/OPVoiceLogoCROP_v-1.14.png" />
+
+<!-- Preload critical resources -->
+    <!-- Load external CSS files -->
+    <link rel="stylesheet" href="assets/css/hero-animations.css" />
+    <link rel="stylesheet" href="assets/css/shared-styles.css" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- Font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+
+    <!-- Include Showdown.js for Markdown to HTML conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" defer></script>
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Overland Park Voice",
+  "alternateName": "OP Voice",
+  "description": "A platform for community engagement and civic participation in Overland Park, Kansas. We empower Overland Park's community workforce by making local government accessible, responsive, and a worthwhile investment of your time.",
+  "url": "https://opvoice.org",
+  "logo": "https://opvoice.org/BackEnd/OPVoiceLogo_v-1.14.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Overland Park",
+    "addressRegion": "Kansas",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Overland Park",
+    "sameAs": "https://www.opkansas.org"
+  },
+  "sameAs": [
+    "https://x.com/VoiceOf_OP",
+    "https://www.facebook.com/profile.php?id=61578842542286"
+  ],
+  "foundingDate": "2025",
+  "knowsAbout": [
+    "Civic Engagement",
+    "Local Government",
+    "Community Advocacy",
+    "Housing Policy",
+    "Government Transparency"
+  ],
+  "slogan": "Completing the Civic Dialogue"
+}
+</script>
+
+<!-- Tailwind Configuration -->
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      colors: {
+        brand: {
+          dark: "#2E5339",
+          dark50: "#EDF3EF",
+          dark100: "#D4E1D9",
+          dark200: "#A8C0AF",
+          dark300: "#7EA187",
+          dark400: "#5F896A",
+          dark500: "#4B7358",
+          dark600: "#3E624B",
+          dark700: "#2E5339", // base
+          dark800: "#23402C",
+          dark900: "#182B1D",
+          light: "#6A994E",
+          light50: "#F0F7EC",
+          light100: "#DCEECC",
+          light200: "#C0E0A8",
+          light300: "#A3D184",
+          light400: "#88C364",
+          light500: "#6A994E", // base
+          light600: "#598443",
+          light700: "#476D38",
+          light800: "#36572C",
+          light900: "#254020",
+          gray: "#F5F5F5",
+          offwhite: "#FAFAFA",
+          surface0: "#FFFFFF",
+          surface50: "#FAFAFA",
+          surface100: "#F5F5F5",
+          surface200: "#ECECEC",
+          surface300: "#E0E0E0",
+        },
+        neutral: {
+          900: "#1F2937",
+          700: "#374151",
+          600: "#4B5563",
+          500: "#6B7280",
+          300: "#D1D5DB",
+          200: "#E5E7EB",
+          50: "#F9FAFB",
+        },
+        info: { DEFAULT: "#FFA600" },
+        warn: {
+          300: "#FDE047",
+          800: "#854D0E",
+        },
+        alert: {
+          DEFAULT: "#D90429",
+          400: "#F87171",
+          50: "#FEF2F2",
+        },
+        // Legacy support - keeping old tokens for compatibility
+        "brand-dark-green": "#2E5339",
+        "brand-light-green": "#6A994E",
+        "brand-gray": "#F5F5F5",
+        "brand-off-white": "#FAFAFA",
+      },
+    },
+  },
+};
+</script>
+
+<!-- Load external CSS files -->
+<link rel="stylesheet" href="assets/css/hero-animations.css" />
+<link rel="stylesheet" href="assets/css/shared-styles.css" />

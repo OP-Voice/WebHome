@@ -1,0 +1,174 @@
+{
+  "executiveLeadership": {
+    "mayorName": "Curt Skoog",
+    "mayorPhone": "913-895-6104",
+    "mayorEmail": "mayor@opkansas.org",
+    "cityManagerName": "Lori Curtis Luther",
+    "assistantCityManagerName": "Kate Gunja",
+    "cityClerkName": "Elizabeth Kelley"
+  },
+  "departmentHeads": {
+    "policeChiefName": "Doreen Jokerst",
+    "fireChiefName": "Alan Long",
+    "publicWorksDirector": "Lorraine Basalo",
+    "parksRecreationDirector": "Bryan Toben"
+  },
+  "wardRepresentatives": {
+    "ward1": {
+      "councilMemberA": {
+        "name": "Logan Heley",
+        "email": "logan.heley@opkansas.org",
+        "phone": "913-895-6575"
+      },
+      "councilMemberB": {
+        "name": "Holly Grummert",
+        "email": "holly.grummert@opkansas.org",
+        "phone": "913-895-6577"
+      }
+    },
+    "ward2": {
+      "councilMemberA": {
+        "name": "Melissa Cheatham",
+        "email": "melissa.cheatham@opkansas.org",
+        "phone": "913-895-6585"
+      },
+      "councilMemberB": {
+        "name": "Drew Mitrisin",
+        "email": "drew.mitrisin@opkansas.org",
+        "phone": "913-895-6574"
+      }
+    },
+    "ward3": {
+      "councilMemberA": {
+        "name": "Jim Kite",
+        "email": "jim.kite@opkansas.org",
+        "phone": "913-438-2183"
+      },
+      "councilMemberB": {
+        "name": "Richard Borlaza",
+        "email": "richard.borlaza@opkansas.org",
+        "phone": "913-895-6576"
+      }
+    },
+    "ward4": {
+      "councilMemberA": {
+        "name": "Scott Mosher",
+        "email": "scott.mosher@opkansas.org",
+        "phone": "913-895-6588"
+      },
+      "councilMemberB": {
+        "name": "Gregg Riess",
+        "email": "gregg.riess@opkansas.org",
+        "phone": "913-895-6591"
+      }
+    },
+    "ward5": {
+      "councilMemberA": {
+        "name": "Sam Passer",
+        "email": "sam.passer@opkansas.org",
+        "phone": "913-895-6586"
+      },
+      "councilMemberB": {
+        "name": "Inas Younis",
+        "email": "inas.younis@opkansas.org",
+        "phone": "913-895-6592"
+      }
+    },
+    "ward6": {
+      "councilMemberA": {
+        "name": "Jeff Cox",
+        "email": "jeff.cox@opkansas.org",
+        "phone": "913-895-6587"
+      },
+      "councilMemberB": {
+        "name": "Chris Newlin",
+        "email": "chris.newlin@opkansas.org",
+        "phone": "913-895-6565"
+      }
+    }
+  },
+  "cityContact": {
+    "cityHallAddress": "City Hall, 8500 Santa Fe Drive, Overland Park, KS 66212",
+    "cityHallHours": "8 a.m.-5 p.m. Monday-Friday",
+    "cityHallMainPhone": "913-895-6000"
+  },
+  "electionsVoting": {
+    "electionOfficeAddress": "2101 E Kansas City Rd, Olathe, KS 66061",
+    "electionOfficePhone": "(913) 715-6800",
+    "nextCityElectionDate": "November 4, 2025",
+    "nextGeneralElectionDate": "November 4, 2025"
+  },
+  "publicMeetings": {
+    "cityCouncilRegularSchedule": "Every 1st and 3rd Monday of the Month at 7:30 PM",
+    "cityCouncilStudySessionSchedule": "N/a",
+    "cityCouncilMeetingLocation": "City Hall Council Chamber",
+    "planningCommissionSchedule": "Second Monday of the month at 1:30 PM",
+    "planningCommissionLocation": "City Hall Council Chamber"
+  },
+  "emergencyServices": {
+    "policeNonEmergencyPhone": "913-895-6300",
+    "fireNonEmergencyPhone": "913-888-6066",
+    "animalControlPhone": "913-895-6300"
+  },
+  "parksRecreation": {
+    "parksDepartmentPhone": "913-344-8686",
+    "golfCourseNames": "St. Andrews Golf Club, Sykes/Lady Overland Park Golf Club",
+    "arboretumName": "Overland Park Arboretum & Botanical Gardens"
+  },
+  "schoolsEducation": {
+    "shawneeMissionPhone": "(913) 993-6200",
+    "blueValleyPhone": "(913) 239-4000",
+    "libraryBranches": [
+      "Johnson County Library - Central Resource",
+      "Johnson County Library - Oak Park",
+      "Johnson County Library - Blue Valley",
+      "Billington Library"
+    ]
+  },
+  "transportation": {
+    "kcataPhone": "816-346-0200",
+    "interstateHighways": "I-435, I-35",
+    "usHighways": "US-69"
+  },
+  "cityStatistics": {
+    "population": "Approximately 206,030 residents",
+    "areaSqMiles": "75.8 Square Miles",
+    "foundedYear": "1960"
+  },
+  "utilities": {
+    "water": {
+      "provider": "WaterOne",
+      "phone": "913-895-1800"
+    },
+    "sewer": {
+      "provider": "Johnson County Wastewater",
+      "phone": "913-715-8500"
+    },
+    "electric": {
+      "provider": "Evergy",
+      "phone": "816-471-5275"
+    },
+    "gas": {
+      "primaryProvider": "Atmos Energy",
+      "primaryPhone": "888-442-1313",
+      "alternateProvider": "Kansas Gas",
+      "alternatePhone": "800-794-4780"
+    },
+    "internet": {
+      "providers": [
+        "AT&T (913-676-1801)",
+        "Google Fiber (877-454-6959)", 
+        "Spectrum (800-892-4357)",
+        "Consolidated Communications (913-825-3000)"
+      ]
+    },
+    "trash": {
+      "note": "Overland Park does not provide trash pickup services. Multiple private haulers are permitted.",
+      "exampleProviders": [
+        "Waste Management (913-631-3300)",
+        "Republic Services (816-254-1470)",
+        "Gardner Disposal Service (913-856-3851)"
+      ]
+    }
+  }
+}

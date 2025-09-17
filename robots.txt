@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://opvoice.org/sitemap.xml
+
+# Disallow development and backup folders
+Disallow: /OLD/
+Disallow: /research/
+
+# Allow access to assets
+Allow: /BackEnd/
+Allow: /LocalInfo/
+Allow: /updates/

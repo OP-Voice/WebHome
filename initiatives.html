@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Our Initiatives | Overland Park Voice</title>
+    <meta name="title" content="Our Initiatives | Overland Park Voice" />
+    <meta
+      name="description"
+      content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change."
+    />
+    <meta
+      name="keywords"
+      content="Overland Park initiatives, housing advocacy, government transparency, civic initiatives, local policy, community programs, OP advocacy"
+    />
+    <meta name="author" content="Overland Park Voice" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://opvoice.org/initiatives.html" />
+    <meta property="og:title" content="Our Initiatives | Overland Park Voice" />
+    <meta
+      property="og:description"
+      content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change."
+    />
+    <meta
+      property="og:image"
+      content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png"
+    />
+    <meta property="og:site_name" content="Overland Park Voice" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://opvoice.org/initiatives.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Our Initiatives | Overland Park Voice"
+    />
+    <meta
+      property="twitter:description"
+      content="Explore Overland Park Voice's current civic initiatives including housing advocacy, government transparency, and community engagement programs. Get involved in local policy change."
+    />
+    <meta
+      property="twitter:image"
+      content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png"
+    />
+    <meta property="twitter:site" content="@VoiceOf_OP" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opvoice.org/initiatives.html" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/logos/OPVoiceLogoCROP_v-1.14.png"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                dark: "#2E5339",
+                light: "#6A994E",
+                gray: "#F5F5F5",
+                "off-white": "#FAFAFA",
+              },
+              neutral: {
+                900: "#1F2937",
+                700: "#374151",
+                600: "#4B5563",
+                500: "#6B7280",
+                300: "#D1D5DB",
+                200: "#E5E7EB",
+                100: "#F3F4F6",
+                50: "#F9FAFB",
+              },
+              warn: {
+                300: "#FDE047",
+                800: "#854D0E",
+              },
+              "brand-dark-green": "#2E5339",
+              "brand-light-green": "#6A994E",
+              "brand-gray": "#F5F5F5",
+              "brand-off-white": "#FAFAFA",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .initiative-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .initiative-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(106, 153, 78, 0.15);
+        border-color: rgba(106, 153, 78, 0.2);
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .status-current {
+        background-color: #dcfce7;
+        color: #166534;
+      }
+
+      .status-future {
+        background-color: #fef3c7;
+        color: #92400e;
+      }
+
+      .principle-icon {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        font-size: 0.875rem;
+      }
+
+      .principle-collaborative {
+        background-color: #3b82f6;
+      }
+      .principle-accessible {
+        background-color: #10b981;
+      }
+      .principle-data-driven {
+        background-color: #f59e0b;
+      }
+      .principle-results-oriented {
+        background-color: #ef4444;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-gray text-neutral-700 font-sans">
+    <!-- Header & Navigation (loaded via JavaScript) -->
+    <div id="header-placeholder"></div>
+
+    <!-- WIP Banner (loaded via JavaScript) -->
+    <div id="wip-banner-placeholder"></div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-bg py-16 md:py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h1
+            class="text-4xl md:text-5xl font-bold text-brand-dark-green leading-tight mb-6"
+          >
+            Our Strategic Initiatives
+          </h1>
+          <p class="text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto mb-8">
+            These are the advocacy campaigns that Overland Park Voice has
+            adopted as our organizational focus. Each initiative perfectly
+            aligns with our core values of being collaborative, accessible,
+            data-driven, and results-oriented.
+          </p>
+          <div
+            class="bg-brand-light-green/10 border border-brand-light-green/30 rounded-lg p-6 max-w-3xl mx-auto"
+          >
+            <p class="text-brand-dark-green font-medium">
+              <strong>Note:</strong> These are distinct from the
+              community-driven initiatives we help launch through our
+              <a
+                href="launch.html"
+                class="text-brand-light-green hover:underline font-semibold"
+                >Community Launchpad</a
+              >. The initiatives below represent our organization's strategic
+              priorities for creating systemic change in Overland Park.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values Reference -->
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-brand-dark-green mb-4">
+              How Our Values Guide Our Initiatives
+            </h2>
+            <p class="text-neutral-600 max-w-2xl mx-auto">
+              Every initiative we adopt must demonstrate alignment with all four
+              of our core principles:
+            </p>
+          </div>
+          <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="principle-icon principle-collaborative mx-auto mb-3">
+                C
+              </div>
+              <h3 class="font-semibold text-brand-dark-green">Collaborative</h3>
+              <p class="text-sm text-neutral-600">
+                Building bridges, not walls
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="principle-icon principle-accessible mx-auto mb-3">
+                A
+              </div>
+              <h3 class="font-semibold text-brand-dark-green">Accessible</h3>
+              <p class="text-sm text-neutral-600">
+                Lowering barriers to participation
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="principle-icon principle-data-driven mx-auto mb-3">
+                D
+              </div>
+              <h3 class="font-semibold text-brand-dark-green">Data-Driven</h3>
+              <p class="text-sm text-neutral-600">
+                Transparent data + personal stories
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="principle-icon principle-results-oriented mx-auto mb-3"
+              >
+                R
+              </div>
+              <h3 class="font-semibold text-brand-dark-green">
+                Results-Oriented
+              </h3>
+              <p class="text-sm text-neutral-600">
+                Achievable goals with real impact
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Initiatives -->
+      <section class="py-16 bg-neutral-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-brand-dark-green mb-4"
+            >
+              Current Initiatives
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Our active advocacy campaigns focused on making local government
+              more accessible and responsive.
+            </p>
+          </div>
+
+          <div class="space-y-8 max-w-5xl mx-auto">
+            <!-- Government Transparency Initiative -->
+            <div class="initiative-card bg-white rounded-lg shadow-md p-8">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <span class="status-badge status-current mb-3"
+                    >Current Focus</span
+                  >
+                  <h3 class="text-2xl font-bold text-brand-dark-green">
+                    Government Transparency
+                  </h3>
+                  <p class="text-brand-light-green font-semibold">
+                    Making City Hall Accessible to All Residents
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    The Challenge
+                  </h4>
+                  <p class="text-neutral-700 mb-4">
+                    Many residents don't know who represents them, when meetings
+                    occur, or how to participate in local government. This
+                    creates barriers to civic engagement, especially for working
+                    families and renters.
+                  </p>
+
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Our Approach
+                  </h4>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Comprehensive local government directory</li>
+                    <li>Clear meeting schedules and participation guides</li>
+                    <li>Simplified ward finder tools</li>
+                    <li>Accessible contact information for all officials</li>
+                  </ul>
+                </div>
+
+                <div class="bg-neutral-50 p-6 rounded-lg">
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Values Alignment
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-collaborative">
+                        C
+                      </div>
+                      <span class="text-sm"
+                        >Connecting residents with their representatives</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-accessible">A</div>
+                      <span class="text-sm"
+                        >Removing barriers to civic participation</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-data-driven">D</div>
+                      <span class="text-sm"
+                        >Providing clear, factual government information</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-results-oriented">
+                        R
+                      </div>
+                      <span class="text-sm"
+                        >Measurable increase in civic engagement</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-neutral-200 pt-6">
+                <h4 class="font-semibold text-brand-dark-green mb-3">
+                  Current Status & Next Steps
+                </h4>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                  <div
+                    class="bg-green-50 p-3 rounded border-l-4 border-green-400"
+                  >
+                    <p class="font-medium text-green-800">✓ Completed</p>
+                    <p class="text-green-700">
+                      Website infrastructure and design
+                    </p>
+                  </div>
+                  <div
+                    class="bg-blue-50 p-3 rounded border-l-4 border-blue-400"
+                  >
+                    <p class="font-medium text-blue-800">🔄 In Progress</p>
+                    <p class="text-blue-700">
+                      Gathering official contact information
+                    </p>
+                  </div>
+                  <div
+                    class="bg-yellow-50 p-3 rounded border-l-4 border-yellow-400"
+                  >
+                    <p class="font-medium text-yellow-800">📋 Planned</p>
+                    <p class="text-yellow-700">Ward finder tool development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Housing Task Force Initiative -->
+            <div class="initiative-card bg-white rounded-lg shadow-md p-8">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <span class="status-badge status-current mb-3"
+                    >Current Focus</span
+                  >
+                  <h3 class="text-2xl font-bold text-brand-dark-green">
+                    Housing Task Force
+                  </h3>
+                  <p class="text-brand-light-green font-semibold">
+                    Ensuring Housing Remains Affordable for Our Community
+                    Workforce
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    The Challenge
+                  </h4>
+                  <p class="text-neutral-700 mb-4">
+                    While 38% of Overland Park residents are renters, formal
+                    city engagement structures primarily serve homeowners.
+                    Rising housing costs threaten to price out the teachers,
+                    retail workers, and healthcare staff who power our local
+                    economy.
+                  </p>
+
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Our Approach
+                  </h4>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Advocate for a Housing Advisory Commission</li>
+                    <li>Include renters, landlords, and housing advocates</li>
+                    <li>Provide formal input on housing-related policies</li>
+                    <li>Present data-driven testimony to city council</li>
+                  </ul>
+                </div>
+
+                <div class="bg-neutral-50 p-6 rounded-lg">
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Values Alignment
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-collaborative">
+                        C
+                      </div>
+                      <span class="text-sm"
+                        >Bringing together diverse housing stakeholders</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-accessible">A</div>
+                      <span class="text-sm"
+                        >Creating formal representation for renters</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-data-driven">D</div>
+                      <span class="text-sm"
+                        >Using salary and rent data to inform policy</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-results-oriented">
+                        R
+                      </div>
+                      <span class="text-sm"
+                        >Concrete policy recommendations</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-neutral-200 pt-6">
+                <h4 class="font-semibold text-brand-dark-green mb-3">
+                  Current Status & Next Steps
+                </h4>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                  <div
+                    class="bg-green-50 p-3 rounded border-l-4 border-green-400"
+                  >
+                    <p class="font-medium text-green-800">✓ Completed</p>
+                    <p class="text-green-700">Research and data analysis</p>
+                  </div>
+                  <div
+                    class="bg-blue-50 p-3 rounded border-l-4 border-blue-400"
+                  >
+                    <p class="font-medium text-blue-800">🔄 In Progress</p>
+                    <p class="text-blue-700">Public testimony and advocacy</p>
+                  </div>
+                  <div
+                    class="bg-yellow-50 p-3 rounded border-l-4 border-yellow-400"
+                  >
+                    <p class="font-medium text-yellow-800">📋 Planned</p>
+                    <p class="text-yellow-700">
+                      Commission proposal development
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Initiatives -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <div
+              class="bg-gradient-to-r from-brand-light-green to-brand-dark-green h-1 w-24 mx-auto mb-6"
+            ></div>
+            <h2
+              class="text-3xl md:text-4xl font-bold text-brand-dark-green mb-4"
+            >
+              Future Strategic Initiatives
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+              These represent our planned expansion as we establish our
+              foundation and grow our community engagement.
+            </p>
+            <div
+              class="bg-gradient-to-r from-brand-light-green to-brand-dark-green h-1 w-24 mx-auto mt-6"
+            ></div>
+          </div>
+
+          <div class="space-y-8 max-w-5xl mx-auto">
+            <!-- Fiscally Responsible Growth Initiative -->
+            <div class="initiative-card bg-neutral-50 rounded-lg shadow-md p-8">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <span class="status-badge status-future mb-3"
+                    >Future Initiative</span
+                  >
+                  <h3 class="text-2xl font-bold text-brand-dark-green">
+                    Fiscally Responsible Growth
+                  </h3>
+                  <p class="text-brand-light-green font-semibold">
+                    Ensuring Public Investments Benefit the Entire Community
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    The Focus
+                  </h4>
+                  <p class="text-neutral-700 mb-4">
+                    Advocating for development and budget policies that
+                    prioritize community needs, sustainable growth, and
+                    equitable distribution of public resources across all
+                    neighborhoods and demographics.
+                  </p>
+
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Key Areas
+                  </h4>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Budget transparency and community input</li>
+                    <li>Sustainable development practices</li>
+                    <li>Equitable infrastructure investment</li>
+                    <li>Long-term financial planning</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border border-neutral-200">
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Values Alignment
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-collaborative">
+                        C
+                      </div>
+                      <span class="text-sm"
+                        >Working with city staff on budget planning</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-accessible">A</div>
+                      <span class="text-sm"
+                        >Making budget information understandable</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-data-driven">D</div>
+                      <span class="text-sm"
+                        >Evidence-based fiscal policy recommendations</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-results-oriented">
+                        R
+                      </div>
+                      <span class="text-sm"
+                        >Improved community return on investment</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Community Stewardship Initiative -->
+            <div class="initiative-card bg-neutral-50 rounded-lg shadow-md p-8">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <span class="status-badge status-future mb-3"
+                    >Future Initiative</span
+                  >
+                  <h3 class="text-2xl font-bold text-brand-dark-green">
+                    Empowering Community Stewards
+                  </h3>
+                  <p class="text-brand-light-green font-semibold">
+                    Scaling Our Model to Build Civic Leadership
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    The Vision
+                  </h4>
+                  <p class="text-neutral-700 mb-4">
+                    Create a network of trained community advocates who can
+                    effectively engage with local government, run for office,
+                    and lead their own neighborhood initiatives with proper
+                    support and resources.
+                  </p>
+
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Program Elements
+                  </h4>
+                  <ul class="list-disc list-inside text-neutral-700 space-y-1">
+                    <li>Civic leadership training programs</li>
+                    <li>Mentorship for aspiring candidates</li>
+                    <li>Resource library for advocacy tools</li>
+                    <li>Ongoing support network</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border border-neutral-200">
+                  <h4 class="font-semibold text-brand-dark-green mb-3">
+                    Values Alignment
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-collaborative">
+                        C
+                      </div>
+                      <span class="text-sm"
+                        >Building networks of civic-minded residents</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-accessible">A</div>
+                      <span class="text-sm"
+                        >Lowering barriers to civic leadership</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-data-driven">D</div>
+                      <span class="text-sm"
+                        >Training on research and evidence gathering</span
+                      >
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <div class="principle-icon principle-results-oriented">
+                        R
+                      </div>
+                      <span class="text-sm"
+                        >Measurable growth in civic participation</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="py-16 bg-brand-dark-green text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Join Our Strategic Efforts
+          </h2>
+          <p class="text-lg text-neutral-200 max-w-3xl mx-auto mb-8">
+            These initiatives require community support to succeed. Whether you
+            have 5 minutes or 5 hours to contribute, there's a meaningful way
+            for you to help advance these strategic priorities.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="index.html#get-involved"
+              class="bg-white text-brand-dark-green px-8 py-3 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
+            >
+              Get Involved Today
+            </a>
+            <a
+              href="launch.html"
+              class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-brand-dark-green transition-colors"
+            >
+              Launch Your Own Initiative
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="shared-components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "organization": {
+    "name": "Overland Park Voice",
+    "tagline": "Completing the Civic Dialogue",
+    "foundedYear": "2025",
+    "email": "overlandpark.voice@gmail.com",
+    "website": "https://opvoice.org",
+    "mission": "Building a more engaged and collaborative city by ensuring the people who power our economy have a meaningful voice in its future.",
+    "address": {
+      "city": "Overland Park",
+      "state": "Kansas",
+      "zipCode": "",
+      "fullAddress": ""
+    },
+    "socialMedia": {
+      "twitter": "",
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "statistics": {
+      "populationServed": "195,000+",
+      "cityArea": "75.37 square miles",
+      "wardsTotal": "6",
+      "cityEstablished": "1905"
+    },
+    "contact": {
+      "generalEmail": "overlandpark.voice@gmail.com",
+      "housingEmail": "",
+      "pressEmail": "",
+      "volunteerEmail": ""
+    },
+    "branding": {
+      "primaryColor": "#2E5339",
+      "secondaryColor": "#6A994E",
+      "logoUrl": "/assets/images/logos/OPVoiceLogo_v-1.14.png",
+      "faviconUrl": "/assets/images/logos/OPVoiceLogoCROP_v-1.14.png"
+    }
+  }
+}

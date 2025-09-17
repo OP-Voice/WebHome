@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Overland Park Voice | Community Engagement & Civic Participation</title>
+    <meta name="title" content="Overland Park Voice | Community Engagement & Civic Participation" />
+    <meta name="description" content="Empowering Overland Park's community workforce through accessible civic engagement. Connect with local government, join advocacy efforts, and make your voice heard in our city's future." />
+    <meta name="keywords" content="Overland Park, Kansas, civic engagement, local government, community advocacy, city council, ward representatives, housing policy, civic participation, OP Voice" />
+    <meta name="author" content="Overland Park Voice" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://opvoice.org/" />
+    <meta property="og:title" content="Overland Park Voice | Community Engagement & Civic Participation" />
+    <meta property="og:description" content="Empowering Overland Park's community workforce through accessible civic engagement. Connect with local government, join advocacy efforts, and make your voice heard in our city's future." />
+    <meta property="og:image" content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png" />
+    <meta property="og:site_name" content="Overland Park Voice" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://opvoice.org/" />
+    <meta property="twitter:title" content="Overland Park Voice | Community Engagement & Civic Participation" />
+    <meta property="twitter:description" content="Empowering Overland Park's community workforce through accessible civic engagement. Connect with local government, join advocacy efforts, and make your voice heard in our city's future." />
+    <meta property="twitter:image" content="https://opvoice.org/assets/images/logos/OPVoiceLogo_v-1.14.png" />
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+            sans: ["Inter", "sans-serif"],
+                    },
+                    colors: {
+                        brand: {
+              dark: "#2E5339",
+              dark50: "#EDF3EF",
+              dark100: "#D4E1D9",
+              dark200: "#A8C0AF",
+              dark300: "#7EA187",
+              dark400: "#5F896A",
+              dark500: "#4B7358",
+              dark600: "#3E624B",
+              dark700: "#2E5339", // base
+              dark800: "#23402C",
+              dark900: "#182B1D",
+              light: "#6A994E",
+              light50: "#F0F7EC",
+              light100: "#DCEECC",
+              light200: "#C0E0A8",
+              light300: "#A3D184",
+              light400: "#88C364",
+              light500: "#6A994E", // base
+              light600: "#598443",
+              light700: "#476D38",
+              light800: "#36572C",
+              light900: "#254020",
+              gray: "#F5F5F5",
+              offwhite: "#FAFAFA",
+              surface0: "#FFFFFF",
+              surface50: "#FAFAFA",
+              surface100: "#F5F5F5",
+              surface200: "#ECECEC",
+              surface300: "#E0E0E0",
+                        },
+                        neutral: {
+              900: "#1F2937",
+              700: "#374151",
+              600: "#4B5563",
+              500: "#6B7280",
+              300: "#D1D5DB",
+              200: "#E5E7EB",
+              50: "#F9FAFB",
+            },
+            info: { DEFAULT: "#FFA600" },
+                        warn: {
+              300: "#FDE047",
+              800: "#854D0E",
+                        },
+                        alert: {
+              DEFAULT: "#D90429",
+              400: "#F87171",
+              50: "#FEF2F2",
+                        },
+                        // Legacy support - keeping old tokens for compatibility
+            "brand-dark-green": "#2E5339",
+            "brand-light-green": "#6A994E",
+            "brand-gray": "#F5F5F5",
+            "brand-off-white": "#FAFAFA",
+          },
+        },
+      },
+        };
+    </script>
+
+    <!-- Font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logos/OPVoiceLogoCROP_v-1.14.png" />
+
+    <!-- Load external CSS files -->
+    <link rel="stylesheet" href="assets/css/hero-animations.css" />
+    <link rel="stylesheet" href="assets/css/shared-styles.css" />
+
+    <!-- Chart.js for housing infographic (defer for non-critical loading) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js" defer></script>
+</head>
+<body class="bg-brand-gray text-neutral-700 font-sans">
+    <!-- Skip Link for Accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-dark-green text-white px-4 py-2 rounded-md z-50"
+      >Skip to main content</a
+    >
+
+    <!-- Sticky Header (loaded via JavaScript) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Large Logo -->
+                <div class="mb-8 flex justify-center">
+            <img
+              src="assets/images/logos/OPVoiceLogo_v-1.14.png"
+              alt="Overland Park Voice"
+              class="w-40 h-40 md:w-48 md:h-48 object-contain"
+            />
+                </div>
+          <h1
+            class="text-4xl md:text-6xl font-bold text-brand-dark-green leading-tight"
+          >
+            Completing the Civic Dialogue.
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">
+            We empower Overland Park's community workforce by making local
+            government accessible, responsive, and a worthwhile investment of
+            your time.
+          </p>
+
+                <div class="mt-10">
+                    <!-- Desktop Navigation Buttons -->
+            <div
+              class="hidden md:flex flex-wrap justify-center items-center gap-4"
+            >
+                        <!-- Primary Action Buttons -->
+              <a
+                href="mission.html"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >Our Mission</a
+              >
+                        
+                        <!-- Navigation Buttons -->
+              <a
+                href="initiatives.html"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >Our Initiatives</a
+              >
+              <a
+                href="launch.html"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >Community Launchpad</a
+              >
+              <a
+                href="localinfo.html"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >Local Info</a
+              >
+              <a
+                href="updates.html"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >News</a
+              >
+              <a
+                href="#get-involved"
+                class="bg-white text-brand-dark-green px-8 py-4 rounded-full font-bold text-lg hover:bg-neutral-100 transition-transform transform hover:scale-105 shadow-lg border border-neutral-200"
+                >Get Involved</a
+              >
+                    </div>
+
+                    <!-- Mobile Hamburger Menu -->
+                    <div class="md:hidden">
+              <button
+                id="hero-mobile-menu-button"
+                aria-label="Open mobile navigation menu"
+                aria-expanded="false"
+                class="bg-white text-brand-dark-green px-6 py-3 rounded-full font-bold text-lg hover:bg-neutral-100 transition-all shadow-lg border border-neutral-200 flex items-center space-x-2 mx-auto"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="https://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                            </svg>
+                            <span>Explore Our Site</span>
+                        </button>
+                        
+                        <!-- Mobile Menu Dropdown -->
+              <div
+                id="hero-mobile-menu"
+                role="menu"
+                aria-labelledby="hero-mobile-menu-button"
+                class="hidden mt-4 bg-white rounded-lg shadow-xl border border-neutral-200 overflow-hidden mx-auto max-w-sm"
+              >
+                <a
+                  href="mission.html"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >Our Mission</a
+                >
+                <a
+                  href="initiatives.html"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >Our Initiatives</a
+                >
+                <a
+                  href="launch.html"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >Community Launchpad</a
+                >
+                <a
+                  href="localinfo.html"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >Local Info</a
+                >
+                <a
+                  href="updates.html"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >News</a
+                >
+                <a
+                  href="#get-involved"
+                  class="block px-6 py-4 text-brand-dark-green font-semibold hover:bg-neutral-50 border-b border-neutral-100 last:border-b-0"
+                  >Get Involved</a
+                >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WIP Banner (loaded via JavaScript) -->
+        <div id="wip-banner-placeholder"></div>
+
+        <!-- Mission Section -->
+      <section id="mission" class="py-20 bg-brand-gray">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              Our Mission: A Platform for Community Engagement
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
+              We build a more engaged and collaborative city by ensuring the
+              people who power our economy have a meaningful voice in its
+              future.
+            </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+              <h3 class="text-2xl font-bold text-brand-dark-green mb-4">
+                The Gap We Fill
+              </h3>
+              <p class="text-neutral-700 mb-4">
+                Overland Park has channels for civic participation like the
+                Chamber of Commerce and homeowners' associations. While
+                valuable, these avenues often require a time commitment that
+                many in our community workforce—retail workers, teachers,
+                healthcare staff, and renters—simply don't have.
+              </p>
+              <p class="text-neutral-700">
+                <strong>Overland Park Voice fills this gap.</strong> We make
+                participation more accessible and impactful, organizing our
+                community to focus on clear, common-sense goals. We are an
+                additive force for a more inclusive civic dialogue.
+              </p>
+                    </div>
+                    <div class="bg-brand-gray p-8 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold text-brand-dark-green mb-4">
+                Leveraging FrameworkOP
+              </h3>
+              <p class="text-neutral-700">
+                In May 2025, the City of Overland Park adopted
+                <a
+                  href="https://www.opkansas.org/city-services/planning-development/long-range-planning/comprehensive-plan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-brand-light-green font-semibold hover:underline"
+                  >FrameworkOP</a
+                >, its official comprehensive plan. This document provides a
+                clear roadmap for the city's future. We use FrameworkOP as a
+                foundational guide, aligning our efforts with the city's own
+                stated goals to ensure our advocacy is focused, constructive,
+                and effective.
+              </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Principles Section -->
+        <section id="principles" class="py-20 bg-brand-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              Our Core Principles
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600">
+              These values guide everything we do.
+            </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="bg-brand-off-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow border border-neutral-100"
+            >
+              <h3 class="text-xl font-bold text-brand-dark-green mb-3">
+                Collaborative
+              </h3>
+              <p class="text-neutral-600">
+                We seek to build bridges, not walls. We believe the best
+                outcomes are found when everyone works together.
+              </p>
+                    </div>
+            <div
+              class="bg-brand-off-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow border border-neutral-100"
+            >
+              <h3 class="text-xl font-bold text-brand-dark-green mb-3">
+                Accessible
+              </h3>
+              <p class="text-neutral-600">
+                We work to demystify the civic process and lower the barriers to
+                participation for every resident.
+              </p>
+                    </div>
+            <div
+              class="bg-brand-off-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow border border-neutral-100"
+            >
+              <h3 class="text-xl font-bold text-brand-dark-green mb-3">
+                Data-Driven
+              </h3>
+              <p class="text-neutral-600">
+                We advocate for policies based on transparent data, paired with
+                powerful, personal stories.
+              </p>
+                    </div>
+            <div
+              class="bg-brand-off-white p-8 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow border border-neutral-100"
+            >
+              <h3 class="text-xl font-bold text-brand-dark-green mb-3">
+                Results-Oriented
+              </h3>
+              <p class="text-neutral-600">
+                We focus on achievable goals that deliver a real return on the
+                community's investment of time and effort.
+              </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ladder of Engagement Section -->
+        <section id="engagement-ladder" class="py-20 bg-neutral-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              Respecting Your Time
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
+              We recognize people have different capacities to contribute. Our
+              "ladder of engagement" offers opportunities for every level of
+              commitment.
+            </p>
+                </div>
+                <div class="relative">
+            <div
+              class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-brand-light-green/50 -translate-y-1/2"
+            ></div>
+                    <div class="grid md:grid-cols-4 gap-8 text-center relative">
+                        <div class="flex flex-col items-center">
+                <div
+                  class="bg-brand-light-green text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10"
+                >
+                  5
+                </div>
+                            <h3 class="font-bold text-lg text-brand-dark-green">Minutes</h3>
+                <p class="text-neutral-600 mt-2">
+                  Follow on social media or sign an online petition.
+                </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                <div
+                  class="bg-brand-light-green text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10"
+                >
+                  15
+                </div>
+                            <h3 class="font-bold text-lg text-brand-dark-green">Minutes</h3>
+                <p class="text-neutral-600 mt-2">
+                  Send a pre-written email to your council member.
+                </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                <div
+                  class="bg-brand-light-green text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10"
+                >
+                  1
+                </div>
+                            <h3 class="font-bold text-lg text-brand-dark-green">Hour</h3>
+                <p class="text-neutral-600 mt-2">
+                  Attend a virtual workshop or community meeting.
+                </p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                <div
+                  class="bg-brand-light-green text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10"
+                >
+                  3+
+                </div>
+                            <h3 class="font-bold text-lg text-brand-dark-green">Hours</h3>
+                <p class="text-neutral-600 mt-2">
+                  Testify at a city meeting or volunteer to help organize.
+                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Pillars/Initiatives Section -->
+        <section id="initiatives" class="py-20 bg-brand-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              Our Strategic Pillars
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600">
+              Our initial campaigns for an accessible government.
+            </p>
+                </div>
+                <div class="space-y-6 max-w-4xl mx-auto">
+            <div
+              class="accordion-item bg-brand-off-white rounded-lg shadow-md border border-neutral-100"
+            >
+              <button
+                class="accordion-header w-full flex justify-between items-center p-6 text-left"
+                aria-expanded="false"
+                aria-controls="accordion-content-1"
+              >
+                <h3 class="text-xl font-semibold text-brand-dark-green">
+                  Our Foundations: Housing for Our Community Workforce
+                </h3>
+                <svg
+                  class="accordion-icon w-6 h-6 transition-transform transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+                        </button>
+              <div
+                id="accordion-content-1"
+                class="accordion-content hidden p-6 pt-0"
+              >
+                <p class="text-neutral-600 mb-4">
+                  <strong>Goal:</strong> To ensure everyone who works in
+                  Overland Park can also afford to live here.
+                </p>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-neutral-800">
+                      <a
+                        href="research/housing-advisory-commission.html"
+                        class="text-brand-light-green hover:underline"
+                      >
+                        Immediate Priority: Establish a Housing Advisory
+                        Commission
+                                        </a>
+                                    </h4>
+                    <p class="text-neutral-700 ml-4">
+                      Advocate for its creation with at least one-third of
+                      commission seats reserved for renters, ensuring those most
+                      impacted by housing instability have a direct voice in
+                      policy recommendations.
+                      <a
+                        href="research/housing-advisory-commission.html"
+                        class="text-brand-light-green hover:underline font-semibold"
+                        >View our complete research →</a
+                      >
+                    </p>
+                                </div>
+                                <div>
+                    <h4 class="font-bold text-neutral-800">
+                      Championing Housing Choice & ‘Missing Middle’ Housing
+                    </h4>
+                    <p class="text-neutral-700 ml-4">
+                      Support the full implementation of FrameworkOP's housing
+                      policies by participating in the
+                      <a
+                        href="https://codes.opkansas.org/municipal-code/doc-viewer.aspx#secid-5207"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-brand-light-green font-semibold hover:underline"
+                        >Unified Development Ordinance (UDO)</a
+                      >
+                      update process.
+                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Looking Forward Section Break -->
+                    <div class="my-12 text-center">
+              <div
+                class="bg-gradient-to-r from-brand-light-green to-brand-dark-green h-1 w-24 mx-auto mb-6"
+              ></div>
+              <h3 class="text-2xl font-bold text-brand-dark-green mb-3">
+                Looking Forward
+              </h3>
+              <p class="text-neutral-600 max-w-2xl mx-auto">
+                Our next strategic pillars represent future goals that will
+                expand our impact as we grow and establish our foundation in the
+                community.
+              </p>
+              <div
+                class="bg-gradient-to-r from-brand-light-green to-brand-dark-green h-1 w-24 mx-auto mt-6"
+              ></div>
+                    </div>
+                    
+            <div
+              class="accordion-item bg-brand-off-white rounded-lg shadow-md border border-neutral-100"
+            >
+              <button
+                class="accordion-header w-full flex justify-between items-center p-6 text-left"
+              >
+                <h3 class="text-xl font-semibold text-brand-dark-green">
+                  Pillar 1: Comprehensive Housing Policy
+                </h3>
+                <svg
+                  class="accordion-icon w-6 h-6 transition-transform transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+                        </button>
+                        <div class="accordion-content hidden p-6 pt-0">
+                <p class="text-neutral-600 mb-4">
+                  <strong>Goal:</strong> To create comprehensive housing
+                  policies that protect renters and preserve neighborhood
+                  character while expanding housing opportunities.
+                </p>
+                            <ul class="list-disc list-inside space-y-2 text-neutral-700">
+                  <li>
+                    Establish a Renters' Bill of Rights for safety,
+                    transparency, and stability.
+                  </li>
+                  <li>
+                    Activate the Overland Park Land Bank to preserve
+                    neighborhood character.
+                  </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+            <div
+              class="accordion-item bg-brand-off-white rounded-lg shadow-md border border-neutral-100"
+            >
+              <button
+                class="accordion-header w-full flex justify-between items-center p-6 text-left"
+              >
+                <h3 class="text-xl font-semibold text-brand-dark-green">
+                  Pillar 2: Fiscally Responsible & Transparent Growth
+                </h3>
+                <svg
+                  class="accordion-icon w-6 h-6 transition-transform transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+                        </button>
+                        <div class="accordion-content hidden p-6 pt-0">
+                <p class="text-neutral-600 mb-4">
+                  <strong>Goal:</strong> To ensure public investments in
+                  development benefit the entire community.
+                </p>
+                             <ul class="list-disc list-inside space-y-2 text-neutral-700">
+                  <li>
+                    Advocate for a clear, public rubric for evaluating projects
+                    requesting public incentives.
+                  </li>
+                  <li>
+                    Promote Community Benefit Agreements (CBAs) to give the
+                    community a direct voice.
+                  </li>
+                            </ul>
+                        </div>
+                    </div>
+            <div
+              class="accordion-item bg-brand-off-white rounded-lg shadow-md border border-neutral-100"
+            >
+              <button
+                class="accordion-header w-full flex justify-between items-center p-6 text-left"
+              >
+                <h3 class="text-xl font-semibold text-brand-dark-green">
+                  Pillar 3: Empowering Community Stewards
+                </h3>
+                <svg
+                  class="accordion-icon w-6 h-6 transition-transform transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+                        </button>
+                        <div class="accordion-content hidden p-6 pt-0">
+                <p class="text-neutral-600 mb-4">
+                  <strong>Goal:</strong> To directly lower the barriers to civic
+                  participation by equipping residents with knowledge and tools.
+                </p>
+                             <ul class="list-disc list-inside space-y-2 text-neutral-700">
+                  <li>
+                    Create "The People's Leadership Program" (PLP), a flexible
+                    civic incubator.
+                  </li>
+                  <li>
+                    Encourage broad-based community service on city boards and
+                    commissions.
+                  </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Community Launchpad Section -->
+        <section id="launchpad" class="py-20 bg-neutral-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              The Community Launchpad
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
+              Your Voice, Amplified. We help residents launch their own
+              city-focused advocacy efforts.
+            </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-brand-dark-green">
+                Turn your ideas into action
+              </h3>
+              <p class="text-neutral-700">
+                Many residents have great ideas but struggle to navigate the
+                civic process. The Launchpad simplifies civic engagement,
+                guiding you step-by-step from inspiration to impact. No more
+                feeling isolated or overwhelmed—we provide the resources,
+                connections, and clear direction you need.
+              </p>
+              <p class="text-neutral-700">
+                The Launchpad embodies our core principles: accessibility,
+                collaboration, and meaningful results. Together, we're building
+                a truly resident-driven community.
+              </p>
+                    </div>
+                    <div class="bg-brand-gray p-8 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold text-brand-dark-green mb-4">
+                How We Help
+              </h3>
+                         <ul class="space-y-4 text-neutral-700">
+                            <li class="flex items-start space-x-3">
+                  <span
+                    class="text-brand-light-green text-xl font-bold flex-shrink-0 mt-0.5"
+                    >&#10003;</span
+                  >
+                                <div>
+                    <strong class="font-semibold">A Forum:</strong> Pitch ideas
+                    and find like-minded volunteers.
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                  <span
+                    class="text-brand-light-green text-xl font-bold flex-shrink-0 mt-0.5"
+                    >&#10003;</span
+                  >
+                                <div>
+                    <strong class="font-semibold">Strategic Guidance:</strong>
+                    Help with research and navigating city processes.
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                  <span
+                    class="text-brand-light-green text-xl font-bold flex-shrink-0 mt-0.5"
+                    >&#10003;</span
+                  >
+                                <div>
+                    <strong class="font-semibold">Communication Tools:</strong>
+                    Access to our network to build support.
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                  <span
+                    class="text-brand-light-green text-xl font-bold flex-shrink-0 mt-0.5"
+                    >&#10003;</span
+                  >
+                                <div>
+                    <strong class="font-semibold">Mentorship:</strong>
+                    Connection with experienced members.
+                                </div>
+                            </li>
+                             <li class="flex items-start space-x-3">
+                  <span
+                    class="text-brand-light-green text-xl font-bold flex-shrink-0 mt-0.5"
+                    >&#10003;</span
+                  >
+                                <div>
+                    <strong class="font-semibold">Stakeholder Access:</strong>
+                    Help connecting with decision-makers.
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Involved / CTA Section -->
+        <section id="get-involved" class="py-20 bg-brand-dark-green text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+              <h2 class="text-3xl md:text-4xl font-bold">
+                Join the Conversation.
+              </h2>
+              <p class="mt-4 text-lg text-neutral-200">
+                Ready to make your voice heard? Sign up for updates, follow us
+                on social media, or send us a message. Your involvement, big or
+                small, makes a difference.
+              </p>
+                        <div class="mt-6 flex justify-center md:justify-start space-x-4">
+                <a
+                  href="https://x.com/VoiceOf_OP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-brand-light-green"
+                  aria-label="Follow us on X (Twitter)"
+                  ><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578842542286"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-brand-light-green"
+                  aria-label="Follow us on Facebook"
+                  ><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    /></svg
+                ></a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-brand-light-green"
+                  aria-label="Join our Discord"
+                  ><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"
+                    /></svg
+                ></a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-brand-light-green"
+                  aria-label="Join our Reddit community"
+                  ><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"
+                    /></svg
+                ></a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-brand-light-green"
+                  aria-label="Subscribe to our YouTube channel"
+                  ><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    /></svg
+                ></a>
+                        </div>
+                    </div>
+            <div
+              class="bg-neutral-50 p-8 rounded-lg shadow-xl border border-neutral-200"
+            >
+              <form
+                id="contact-form"
+                action="https://formspree.io/f/xyzpybdb"
+                method="POST"
+                novalidate
+              >
+                            <div class="mb-4">
+                  <label
+                    for="name"
+                    class="block text-neutral-700 font-semibold mb-2"
+                    >Full Name <span class="text-red-500" aria-label="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-2 border border-neutral-300 rounded-lg text-neutral-900 bg-brand-off-white focus:outline-none focus:ring-2 focus:ring-brand-light-green transition-colors"
+                    required
+                    aria-required="true"
+                    placeholder="Enter your full name"
+                  />
+                            </div>
+                            <div class="mb-4">
+                  <label
+                    for="email"
+                    class="block text-neutral-700 font-semibold mb-2"
+                    >Your Email Address <span class="text-red-500" aria-label="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border border-neutral-300 rounded-lg text-neutral-900 bg-brand-off-white focus:outline-none focus:ring-2 focus:ring-brand-light-green transition-colors"
+                    required
+                    aria-required="true"
+                    placeholder="your.email@example.com"
+                  />
+                            </div>
+                             <div class="mb-6">
+                  <label
+                    for="message"
+                    class="block text-neutral-700 font-semibold mb-2"
+                    >Message (Optional)</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-neutral-300 rounded-lg text-neutral-900 bg-brand-off-white focus:outline-none focus:ring-2 focus:ring-brand-light-green transition-colors resize-vertical"
+                    placeholder="Tell us how we can help or share your thoughts..."
+                    maxlength="1000"
+                  ></textarea>
+                  <p class="text-sm text-neutral-500 mt-1" id="message-help">
+                    Maximum 1000 characters. Your message is optional but appreciated.
+                  </p>
+                            </div>
+                <button
+                  type="submit"
+                  class="w-full bg-brand-light-green text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-brand-dark-green focus:outline-none focus:ring-2 focus:ring-brand-dark-green focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-describedby="form-status"
+                >
+                  Sign Up for Updates
+                </button>
+                        </form>
+                        <p id="form-status" class="mt-4 text-center"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (loaded via JavaScript) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load shared components after page config -->
+    <script src="shared-components.js"></script>
+
+    <!-- JavaScript functionality moved to external files -->
+    <script src="assets/js/page-functions.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+# ===========================================
+# OVERLAND PARK VOICE - PUBLIC REPOSITORY
+# ===========================================
+# .gitignore for civic organization website
+# Excludes development files while keeping documentation visible
+
+# ===========================================
+# DEVELOPMENT DEPENDENCIES
+# ===========================================
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+
+# Development tools
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.eslintcache
+
+# ===========================================
+# ENVIRONMENT & SECRETS
+# ===========================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API keys and secrets
+*.key
+*.pem
+*.crt
+*.cer
+config/secrets.js
+
+# ===========================================
+# BUILD ARTIFACTS
+# ===========================================
+
+# Build directories
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# Compiled files
+*.min.css.map
+*.min.js.map
+
+# ===========================================
+# SYSTEM FILES
+# ===========================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+
+# ===========================================
+# LOGS & TEMPORARY FILES
+# ===========================================
+
+# Log files
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# ===========================================
+# ARCHIVED/DEPRECATED CONTENT
+# ===========================================
+
+# Archive directories (old files not needed in public repo)
+archive/deprecated_files/
+OLD/
+backup/
+
+# Backup file patterns
+*_old.*
+*_backup.*
+*_deprecated.*
+*_original.*
+
+# ===========================================
+# DEVELOPMENT & PLANNING FILES
+# ===========================================
+
+# Development setup scripts and tools (internal use only)
+dev-tools/
+.eslintrc.js
+.prettierrc
+.prettierignore
+package.json
+
+# Planning and architectural documents (internal use only)
+MASTER_PLAN.md
+ARCHITECTURAL_DOCUMENT.md
+ASAP_LAUNCH_PLAN.md
+*_PLAN.md
+*PLAN*.md
+
+# Development research and archives (internal use only)
+archive/
+
+# Data collection forms (internal use only)
+*-placeholders.md
+*-data-form.md
+data-management-expansion-plan.md
+
+# ===========================================
+# NOTES - PUBLIC WEBSITE REPOSITORY
+# ===========================================
+
+# This repository contains ONLY the public website files:
+# - README.md (civic organization info)
+# - All HTML pages (website content)
+# - All CSS/JS assets (website functionality)
+# - Essential resources (Ward Map PDF, logos, etc.)
+# - SEO files (sitemap.xml, robots.txt)
+# 
+# All development tools, planning docs, and internal files
+# are kept local and excluded from the public repository.
