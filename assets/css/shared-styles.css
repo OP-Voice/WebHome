@@ -137,7 +137,7 @@ html {
 
 /* Body padding for fixed header on all pages */
 body.has-sticky-header {
-  padding-top: 64px; /* Height of the sticky header */
+  padding-top: 56px; /* Height of the sticky header */
 }
 
 /* Ensure main content flows properly under fixed header */

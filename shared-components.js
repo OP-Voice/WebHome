@@ -160,32 +160,32 @@ function generateNavigation() {
     // Don't show Home link if we're on the home page (but show it when in research folder)
   const homeLink =
     (currentPage !== "index.html" && currentPage !== "") || isInResearchFolder
-      ? `<a href="${basePath}index.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Home</a>`
+      ? `<a href="${basePath}index.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">Home</a>`
       : "";
 
   const missionLink =
     currentPage !== "mission.html"
-      ? `<a href="${basePath}mission.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Our Mission</a>`
+      ? `<a href="${basePath}mission.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">Our Mission</a>`
       : "";
 
   const initiativesLink =
     currentPage !== "initiatives.html"
-      ? `<a href="${basePath}initiatives.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Our Initiatives</a>`
+      ? `<a href="${basePath}initiatives.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">Our Initiatives</a>`
       : "";
 
   const launchLink =
     currentPage !== "launch.html"
-      ? `<a href="${basePath}launch.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Community Launchpad</a>`
+      ? `<a href="${basePath}launch.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">Community Launchpad</a>`
       : "";
 
   const localinfoLink =
     currentPage !== "localinfo.html"
-      ? `<a href="${basePath}localinfo.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">Local Info</a>`
+      ? `<a href="${basePath}localinfo.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">Local Info</a>`
       : "";
 
-  const updatesLink =
+const updatesLink =
     currentPage !== "updates.html"
-      ? `<a href="${basePath}updates.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium">News</a>`
+      ? `<a href="${basePath}updates.html" class="nav-item text-neutral-600 hover:text-brand-light-green transition-colors font-medium whitespace-nowrap">News</a>`
       : "";
     
     // Build navigation with proper spacing
@@ -201,10 +201,10 @@ function generateNavigation() {
     .join("\n                    ");
     
     return `
-                <nav class="hidden md:flex items-center space-x-6">
+                <nav class="hidden md:flex items-center space-x-4 lg:space-x-6 flex-nowrap">
                     ${navItems}
-                    <div class="w-px h-5 bg-neutral-300 mx-2"></div>
-                    <a href="${basePath}index.html#get-involved" class="cta-button text-white px-5 py-2 rounded-full font-semibold transition-all text-sm">Join Us</a>
+                    <div class="w-px h-5 bg-neutral-300 mx-2 flex-shrink-0"></div>
+                    <a href="${basePath}index.html#get-involved" class="cta-button text-white px-4 py-2 rounded-full font-semibold transition-all text-sm whitespace-nowrap flex-shrink-0">Join Us</a>
                 </nav>`;
 }
 
@@ -275,13 +275,13 @@ function generateStickyHeaderHTML() {
     
     return `
     <header class="sticky-header fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-200 shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
+        <div class="container mx-auto px-6 py-2">
+            <div class="flex items-center justify-between min-w-0">
+                <div class="flex items-center space-x-3 flex-shrink-0">
                     <img src="${basePath}assets/images/logos/OPVoiceLogoCROP_v-1.14.png" alt="Overland Park Voice Logo" class="w-8 h-8">
-                    <a href="${basePath}index.html" class="text-xl font-bold logo-gradient hover:opacity-80 transition-opacity">Overland Park Voice</a>
+                    <a href="${basePath}index.html" class="text-xl font-bold logo-gradient hover:opacity-80 transition-opacity whitespace-nowrap">Overland Park Voice</a>
                 </div>
-                <div id="desktop-nav-placeholder"></div>
+                <div id="desktop-nav-placeholder" class="flex-shrink-0"></div>
                 <div class="md:hidden">
                     <button id="sticky-mobile-menu-button" class="text-brand-dark-green focus:outline-none p-2 rounded-lg hover:bg-brand-light-green/10 transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
