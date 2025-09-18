@@ -107,7 +107,7 @@ We fill the gap in civic participation by making government involvement more acc
 ### What We've Accomplished
 - Built a comprehensive civic engagement platform serving 195,000+ Overland Park residents
 - Created accessible government contact and ward identification tools
-- Developed research and advocacy frameworks aligned with FrameworkOP (city's comprehensive plan)
+- Developed research and advocacy frameworks aligned with [FrameworkOP](https://www.opkansas.org/city-services/planning-development/long-range-planning/comprehensive-plan/) (city's comprehensive plan)
 - Established pathways for resident-led civic initiatives
 
 ### Our Goals

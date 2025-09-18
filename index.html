@@ -259,9 +259,6 @@
             </div>
         </section>
 
-        <!-- WIP Banner (loaded via JavaScript) -->
-        <div id="wip-banner-placeholder"></div>
-
         <!-- Brief Mission Statement -->
       <section id="mission-brief" class="py-16 bg-brand-gray">
             <div class="container mx-auto px-6">
@@ -272,7 +269,7 @@
                 </div>
                 <div class="max-w-4xl mx-auto text-center">
             <p class="text-lg text-neutral-700 mb-6">
-              Many in our community workforce—teachers, healthcare staff, retail workers, and renters—face barriers to civic participation that traditional channels don't address. We make participation accessible and impactful, using the city's own FrameworkOP plan as our guide.
+              Many in our community workforce—teachers, healthcare staff, retail workers, and renters—face barriers to civic participation that traditional channels don't address. We make participation accessible and impactful, using the city's own <a href="https://www.opkansas.org/city-services/planning-development/long-range-planning/comprehensive-plan/" target="_blank" rel="noopener noreferrer" class="text-brand-light-green font-semibold hover:underline">FrameworkOP</a> plan as our guide.
             </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
@@ -442,17 +439,18 @@
                             </div>
                         </div>
               <h3 class="text-2xl font-bold text-brand-dark-green mb-4">
-                Housing Advisory Commission
+                Keeping Overland Park Within Reach of its Community
               </h3>
               <p class="text-neutral-700 mb-6">
-                We're advocating for a Housing Advisory Commission with meaningful renter representation. With 38% of Overland Park residents being renters, it's time their voices are formally heard in housing policy decisions.
+                The UDO rewrite happening right now is our opportunity to remove systemic barriers that push out teachers, healthcare workers, and working families. We're advocating for smart reforms that expand housing choices, reduce unnecessary costs, and create vibrant neighborhoods where our community workforce can thrive.
               </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="research/housing-advisory-commission.html"
+                  href="#" 
+                  id="current-initiative-link"
                   class="bg-brand-light-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-dark-green transition-colors"
                 >
-                  View Our Research
+                  Our Current Initiative
                 </a>
                 <a
                   href="initiatives.html"
@@ -667,6 +665,191 @@
     <!-- Footer (loaded via JavaScript) -->
     <div id="footer-placeholder"></div>
 
+
+    <!-- Current UDO Proposal Modal -->
+    <div id="current-proposal-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col border border-neutral-200">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-neutral-200 bg-brand-dark-green text-white rounded-t-lg">
+                <h2 class="text-xl font-bold">📋 A More Vibrant Overland Park: UDO Reform Proposal</h2>
+                <button id="close-proposal-modal" class="text-white hover:text-neutral-200 text-3xl leading-none">&times;</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-6">
+                    <!-- Executive Summary -->
+                    <div class="text-center mb-8">
+                        <p class="text-lg text-neutral-700 mb-6">
+                            Overland Park's vision is already clear: vibrant, walkable neighborhoods with a rich variety of housing options. 
+                            This proposal provides a straightforward plan to execute that vision by aligning the UDO with FrameworkOP goals.
+                        </p>
+                        <div class="bg-brand-light-green text-white p-4 rounded-lg">
+                            <p class="font-semibold">Our recommendations are common-sense changes focused on three key areas:</p>
+                        </div>
+                    </div>
+
+                    <!-- Three Key Areas - Detailed -->
+                    <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                        <!-- Housing Variety -->
+                        <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                            <h3 class="text-xl font-bold text-brand-dark-green mb-4">🏠 Expand Housing Variety & Attainability</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">The Challenge</h4>
+                                    <p class="text-sm text-neutral-700">Large lot requirements limit housing diversity, inflate costs, and contradict FrameworkOP's call for "vibrant neighborhoods with variety."</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">Our Solutions</h4>
+                                    <ul class="text-sm text-neutral-700 space-y-1">
+                                        <li>• Allow duplexes, townhomes, cottage courts by-right in R-1/R-1A</li>
+                                        <li>• Legalize ADUs citywide with clear, objective standards</li>
+                                        <li>• Reduce minimum lot sizes to enable starter homes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cost Barriers -->
+                        <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                            <h3 class="text-xl font-bold text-brand-dark-green mb-4">💰 Remove Systemic Barriers</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">The Challenge</h4>
+                                    <p class="text-sm text-neutral-700">Outdated parking and occupancy rules add unnecessary costs passed on to residents and limit household types.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">Our Solutions</h4>
+                                    <ul class="text-sm text-neutral-700 space-y-1">
+                                        <li>• Eliminate parking minimums in Strategic Investment Areas</li>
+                                        <li>• Allow shared parking agreements and alternatives</li>
+                                        <li>• Modernize "family" definition to remove arbitrary caps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activate Neighborhoods -->
+                        <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                            <h3 class="text-xl font-bold text-brand-dark-green mb-4">🛍️ Activate Neighborhoods</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">The Challenge</h4>
+                                    <p class="text-sm text-neutral-700">Strict separation creates car-dependent neighborhoods. "Open space" is often unusable leftover land.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900 mb-2">Our Solutions</h4>
+                                    <ul class="text-sm text-neutral-700 space-y-1">
+                                        <li>• Create Neighborhood Commercial overlay for corner stores</li>
+                                        <li>• Require pedestrian-friendly design standards</li>
+                                        <li>• Mandate functional common spaces in developments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Official Timeline -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-brand-dark-green mb-4 text-center">Official UDO Update Timeline</h3>
+                        <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                            <div class="text-center mb-4">
+                                <!-- Replace src with actual timeline graphic path when available -->
+                                <img src="assets/images/UDO-Update-Timeline-Graphic-3000-x-1600-px-4.png" 
+                                     alt="UDO Update Timeline" 
+                                     class="mx-auto max-w-full h-auto rounded border shadow-lg"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                                
+                                <!-- Fallback if image not found -->
+                                <div class="bg-neutral-200 p-8 rounded-lg border-2 border-dashed border-neutral-400" style="display: none;">
+                                    <p class="text-neutral-600 mb-2">📊 UDO Timeline Graphic</p>
+                                    <p class="text-sm text-neutral-500">Add UDO-Update-Timeline-Graphic-3000-x-1600-px-4.png to assets/images/</p>
+                                </div>
+                                
+                                <p class="text-xs text-neutral-500 mt-2 italic">Source: <a href="https://www.opkansas.org/city-services/planning-development/long-range-planning/udo-update/" target="_blank" class="text-brand-light-green hover:underline">City of Overland Park UDO Update</a></p>
+                            </div>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                                <div class="text-center">
+                                    <div class="bg-red-100 p-3 rounded mb-2">
+                                        <p class="font-bold text-red-800">Fall 2025 (NOW)</p>
+                                        <p class="text-red-700 text-xs">Critical Window</p>
+                                    </div>
+                                    <p class="text-neutral-700">Drafting interim amendments & zoning updates</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-orange-100 p-3 rounded mb-2">
+                                        <p class="font-bold text-orange-800">Winter 2025-2026</p>
+                                        <p class="text-orange-700 text-xs">Public Input</p>
+                                    </div>
+                                    <p class="text-neutral-700">Public hearings & development standards</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-yellow-100 p-3 rounded mb-2">
+                                        <p class="font-bold text-yellow-800">Summer 2026</p>
+                                        <p class="text-yellow-700 text-xs">Finalization</p>
+                                    </div>
+                                    <p class="text-neutral-700">Administrative standards & zoning updates</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-green-100 p-3 rounded mb-2">
+                                        <p class="font-bold text-green-800">Fall 2026</p>
+                                        <p class="text-green-700 text-xs">Implementation</p>
+                                    </div>
+                                    <p class="text-neutral-700">Final UDO & training</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Framework for Success -->
+                    <div class="bg-brand-dark-green text-white p-6 rounded-lg text-center mb-6">
+                        <h3 class="text-xl font-bold mb-3">A Framework for Success</h3>
+                        <p>To ensure reforms are successful and accountable, we recommend piloting them in Strategic Investment Areas with progress tracked on a public dashboard.</p>
+                        <p class="mt-3 font-semibold">The bottom line: We're not asking the City to adopt a new vision. We're providing a straightforward path to deliver the one it has already endorsed.</p>
+                    </div>
+
+                    <!-- Key Questions Answered -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-brand-dark-green mb-4">Key Questions Answered</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-neutral-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-brand-dark-green mb-2">Will this change neighborhood character?</h4>
+                                <p class="text-sm text-neutral-700">Character comes from people. Allowing variety helps seniors downsize locally, families find starter homes, and teachers/nurses live where they work - strengthening character.</p>
+                            </div>
+                            <div class="bg-neutral-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-brand-dark-green mb-2">Won't parking changes create problems?</h4>
+                                <p class="text-sm text-neutral-700">This provides flexibility, not bans. Forcing arbitrary parking requirements adds costs. Property owners can build what's actually needed.</p>
+                            </div>
+                            <div class="bg-neutral-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-brand-dark-green mb-2">Why allow businesses in residential areas?</h4>
+                                <p class="text-sm text-neutral-700">Small-scale, neighborhood-serving shops create "15-minute neighborhoods" where you can walk for milk instead of drive everywhere.</p>
+                            </div>
+                            <div class="bg-neutral-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-brand-dark-green mb-2">Are we losing public input?</h4>
+                                <p class="text-sm text-neutral-700">"By-right" development still meets all safety and design standards - it just streamlines the process for needed housing types.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 border-t border-neutral-200 bg-neutral-50 text-center">
+                <p class="text-sm text-neutral-600 mb-4">
+                    Want to learn more about our research journey?
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="research/housing-advisory-commission.html" target="_blank" class="border border-brand-light-green text-brand-light-green px-4 py-2 rounded-lg text-sm hover:bg-brand-light-green hover:text-white transition-colors">
+                        View Past Research
+                    </a>
+                    <a href="initiatives.html" class="bg-brand-light-green text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-dark-green transition-colors">
+                        See All Initiatives
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Load shared components after page config -->
     <script src="shared-components.js"></script>
 
@@ -724,6 +907,51 @@
                     handleScroll(); // Initial check
                 }
             }, 200);
+        });
+    </script>
+
+    <!-- Current Proposal Modal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal Elements
+            const currentInitiativeButton = document.getElementById('current-initiative-link');
+            const currentProposalModal = document.getElementById('current-proposal-modal');
+            const closeProposalModalButton = document.getElementById('close-proposal-modal');
+
+            // Open Current Proposal modal
+            if (currentInitiativeButton && currentProposalModal) {
+                currentInitiativeButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentProposalModal.classList.remove('hidden');
+                    document.body.classList.add('modal-open');
+                });
+            }
+
+            // Close Current Proposal modal
+            if (closeProposalModalButton) {
+                closeProposalModalButton.addEventListener('click', function() {
+                    currentProposalModal.classList.add('hidden');
+                    document.body.classList.remove('modal-open');
+                });
+            }
+
+            // Close modal when clicking outside
+            if (currentProposalModal) {
+                currentProposalModal.addEventListener('click', function(e) {
+                    if (e.target === currentProposalModal) {
+                        currentProposalModal.classList.add('hidden');
+                        document.body.classList.remove('modal-open');
+                    }
+                });
+            }
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && currentProposalModal && !currentProposalModal.classList.contains('hidden')) {
+                    currentProposalModal.classList.add('hidden');
+                    document.body.classList.remove('modal-open');
+                }
+            });
         });
     </script>
 </body>
