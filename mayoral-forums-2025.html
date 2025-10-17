@@ -856,6 +856,145 @@
                 }
             }
         </style>
+        
+        <!-- Resources Tab Styles -->
+        <style>
+            /* Resources tab button - always visible, positioned vertically below KeyTerms with spacing */
+            #resources-tab {
+                position: fixed;
+                right: 8px;
+                top: 50%;
+                transform: translateY(calc(-50% + 140px)) rotate(-90deg);
+                transform-origin: right center;
+                background: #3E624B;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px 8px 0 0;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+                box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                text-align: center;
+                z-index: 1001;
+            }
+            
+            #resources-tab:hover {
+                background: #4B7358;
+            }
+            
+            /* When resources is open, hide the tab */
+            #resources-container.open #resources-tab {
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            /* Resources panel */
+            #resources-panel {
+                position: fixed;
+                right: -350px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: white;
+                width: 350px;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+                padding: 24px;
+                z-index: 1000;
+                transition: right 0.3s ease;
+            }
+            
+            #resources-container.open #resources-panel {
+                right: 0;
+            }
+            
+            /* Resources content */
+            .resources-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #3E624B;
+            }
+            
+            .resources-close {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #374151;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                transition: background 0.2s;
+            }
+            
+            .resources-close:hover {
+                background: #F5F5F5;
+            }
+            
+            .resource-category {
+                margin-bottom: 24px;
+            }
+            
+            .resource-category-title {
+                font-weight: 700;
+                color: #2E5339;
+                font-size: 15px;
+                margin-bottom: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            .resource-item {
+                margin-bottom: 16px;
+            }
+            
+            .resource-item-name {
+                font-weight: 600;
+                color: #374151;
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+            
+            .resource-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 13px;
+            }
+            
+            .resource-links a {
+                color: #3E624B;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            
+            .resource-links a:hover {
+                color: #6A994E;
+                text-decoration: underline;
+            }
+            
+            .resource-links .separator {
+                color: #D1D5DB;
+            }
+            
+            /* Hide on small screens */
+            @media (max-width: 768px) {
+                #resources-tab,
+                #resources-panel {
+                    display: none;
+                }
+            }
+        </style>
 
         <!-- Conclusion Section -->
         <section class="py-16 bg-white">
@@ -1000,23 +1139,181 @@
         </div>
     </div>
     
-    <!-- Glossary Toggle Script -->
+    <!-- Resources Side Panel -->
+    <div id="resources-container">
+        <div id="resources-tab" onclick="toggleResources()">RESOURCES</div>
+        <div id="resources-panel">
+            <div class="resources-header">
+                <h3 class="text-xl font-bold text-brand-dark-green">Resources</h3>
+                <button class="resources-close" onclick="toggleResources()" aria-label="Close resources">&times;</button>
+            </div>
+            
+            <div class="resources-content">
+                <!-- Candidate Resources -->
+                <div class="resource-category">
+                    <div class="resource-category-title">Candidates</div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Mayor Curt Skoog</div>
+                        <div class="resource-links">
+                            <a href="https://curtskoog.com/" target="_blank" rel="noopener noreferrer">Campaign Site</a>
+                            <span class="separator">•</span>
+                            <a href="https://www.facebook.com/VoteSkoog" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Dr. Faris Farassati</div>
+                        <div class="resource-links">
+                            <a href="https://www.faris4op.com/" target="_blank" rel="noopener noreferrer">Campaign Site</a>
+                            <span class="separator">•</span>
+                            <a href="https://www.facebook.com/FarisFarassati" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- City & Government -->
+                <div class="resource-category">
+                    <div class="resource-category-title">City & Government</div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Overland Park Official Site</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/" target="_blank" rel="noopener noreferrer">OPKansas.org</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Framework OP (Comprehensive Plan)</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/city-services/planning-development/long-range-planning/comprehensive-plan/" target="_blank" rel="noopener noreferrer">View Plan</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">UDO (Unified Development Ordinance)</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/city-services/planning-development/long-range-planning/udo-update/" target="_blank" rel="noopener noreferrer">UDO Update</a>
+                            <span class="separator">•</span>
+                            <a href="https://online.encodeplus.com/regs/overlandpark-ks/doc-viewer.aspx#secid-5207" target="_blank" rel="noopener noreferrer">UDO Document</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">City Budget & Finance</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/city-services/finance/budget/" target="_blank" rel="noopener noreferrer">Budget Documents</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Economic Development & TIF</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/city-services/economic-development/" target="_blank" rel="noopener noreferrer">Economic Development</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">City Council</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/your-government/city-council/agendas-minutes/" target="_blank" rel="noopener noreferrer">Agendas & Minutes</a>
+                            <span class="separator">•</span>
+                            <a href="https://www.opkansas.org/your-government/city-council/" target="_blank" rel="noopener noreferrer">Council Info</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Parks & Recreation</div>
+                        <div class="resource-links">
+                            <a href="https://www.opkansas.org/things-to-do/parks-recreation/" target="_blank" rel="noopener noreferrer">Department Page</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Transparency & Research -->
+                <div class="resource-category">
+                    <div class="resource-category-title">Transparency</div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Campaign Finance Reports</div>
+                        <div class="resource-links">
+                            <a href="https://kssos.org/elections/cfr_viewer/cfr_viewer_main.aspx" target="_blank" rel="noopener noreferrer">Kansas Ethics Commission</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Voter Information -->
+                <div class="resource-category">
+                    <div class="resource-category-title">Voter Information</div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">Johnson County Elections</div>
+                        <div class="resource-links">
+                            <a href="https://www.jocoelection.org/" target="_blank" rel="noopener noreferrer">Election Office</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-name">League of Women Voters</div>
+                        <div class="resource-links">
+                            <a href="https://www.lwvk.org/" target="_blank" rel="noopener noreferrer">Kansas Chapter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Glossary & Resources Toggle Script -->
     <script>
         function toggleGlossary() {
-            const container = document.getElementById('glossary-container');
-            container.classList.toggle('open');
+            const glossaryContainer = document.getElementById('glossary-container');
+            const resourcesContainer = document.getElementById('resources-container');
+            
+            // Close resources if open
+            if (resourcesContainer.classList.contains('open')) {
+                resourcesContainer.classList.remove('open');
+            }
+            
+            // Toggle glossary
+            glossaryContainer.classList.toggle('open');
         }
         
-        // Close glossary when clicking outside
+        function toggleResources() {
+            const glossaryContainer = document.getElementById('glossary-container');
+            const resourcesContainer = document.getElementById('resources-container');
+            
+            // Close glossary if open
+            if (glossaryContainer.classList.contains('open')) {
+                glossaryContainer.classList.remove('open');
+            }
+            
+            // Toggle resources
+            resourcesContainer.classList.toggle('open');
+        }
+        
+        // Close both panels when clicking outside
         document.addEventListener('click', function(event) {
             const glossaryContainer = document.getElementById('glossary-container');
             const glossaryPanel = document.getElementById('glossary-panel');
             const glossaryTab = document.getElementById('glossary-tab');
             
+            const resourcesContainer = document.getElementById('resources-container');
+            const resourcesPanel = document.getElementById('resources-panel');
+            const resourcesTab = document.getElementById('resources-tab');
+            
+            // Close glossary if open and clicked outside
             if (glossaryContainer.classList.contains('open') && 
                 !glossaryPanel.contains(event.target) &&
                 !glossaryTab.contains(event.target)) {
                 glossaryContainer.classList.remove('open');
+            }
+            
+            // Close resources if open and clicked outside
+            if (resourcesContainer.classList.contains('open') && 
+                !resourcesPanel.contains(event.target) &&
+                !resourcesTab.contains(event.target)) {
+                resourcesContainer.classList.remove('open');
             }
         });
     </script>
