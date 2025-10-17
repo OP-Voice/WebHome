@@ -110,6 +110,38 @@
     <!-- Load external CSS files -->
     <link rel="stylesheet" href="assets/css/hero-animations.css">
     <link rel="stylesheet" href="assets/css/shared-styles.css">
+    
+    <!-- Tooltip styles -->
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted #6A994E;
+            cursor: help;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            background-color: #2E5339;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            width: 300px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body class="bg-brand-gray text-neutral-700 font-sans">
@@ -126,7 +158,7 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-4xl mx-auto">
                     <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
-                        <span class="text-white font-semibold text-sm uppercase tracking-wide">November 4th Election</span>
+                        <span class="text-white font-semibold text-sm uppercase tracking-wide">November 4, 2025 Election</span>
                     </div>
                     <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                         Mayoral Forums: Same Race, Separate Stages
@@ -161,56 +193,84 @@
                             Links are provided below for independent review and verification.
                         </p>
                         
+                        <!-- Methodology Note -->
+                        <div class="text-center mb-8">
+                            <div class="bg-neutral-50 border border-neutral-200 p-4 rounded-lg inline-block">
+                                <h4 class="font-bold text-brand-dark-green mb-2 text-sm">Methodology</h4>
+                                <p class="text-sm text-neutral-600 leading-snug">
+                                    Items labeled <strong>(reporting)</strong> quote or summarize positions stated directly by the candidates in the forums.<br>
+                                    Items labeled <strong>(analysis)</strong> are OP Voice's comparative context or interpretation.
+                                </p>
+                            </div>
+                        </div>
+                        
                         <!-- Forum Links -->
                         <div class="bg-brand-light50 border-l-4 border-brand-light-green p-6 rounded-r-lg mb-8">
                             <h3 class="text-xl font-bold text-brand-dark-green mb-4">Forum Recordings & Resources</h3>
-                            <ul class="space-y-2 text-neutral-700">
+                            
+                            <h4 class="font-semibold text-brand-dark-green mb-2">Skoog @ JoCo Post Forum (Oct 6)</h4>
+                            <ul class="space-y-2 text-neutral-700 mb-4">
                                 <li>
                                     <a href="https://youtu.be/Z2RqeQMcOTs?si=bYm8ghu2EK0Ylv-U" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-brand-light-green hover:underline font-semibold">
-                                        📺 Watch the Johnson County Post Forum (YouTube)
+                                        📺 Watch the JoCo Post forum (YouTube)
                                     </a>
-                                </li>
-                                <li class="ml-4">
-                                    <strong>Farassati Forum (Video Links):</strong>
-                                    <ul class="ml-4 mt-1 space-y-1">
-                                        <li>
-                                            <a href="https://youtu.be/K4uItOV-9jQ?si=VlDFUEcskDKmbN2R" 
-                                               target="_blank" 
-                                               rel="noopener noreferrer"
-                                               class="text-brand-light-green hover:underline font-semibold">
-                                                YouTube
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://rumble.com/v7060s2-dr.-faris-farassati-for-overland-park-mayor-town-hall-op-ks-10-10-2025.html" 
-                                               target="_blank" 
-                                               rel="noopener noreferrer"
-                                               class="text-brand-light-green hover:underline font-semibold">
-                                                Rumble
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
                                     <a href="https://johnsoncountypost.com/2025/10/06/overland-park-mayor-forum-recap-270070/" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-brand-light-green hover:underline font-semibold">
-                                        📰 Read the Johnson County Post article summary
+                                        📰 JoCo Post recap article
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.jocolibrary.org/blogs/post/johnson-county-library-partners-with-johnson-county-post-for-2025-candidate-forum/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="text-brand-light-green hover:underline font-semibold">
+                                        📚 Library partner listing (context of format)
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="text-sm text-neutral-600 italic mb-4">Dr. Farassati declined to participate in the Post's forum.</p>
+                            
+                            <h4 class="font-semibold text-brand-dark-green mb-2">Farassati Campaign Forum (Oct 10)</h4>
+                            <ul class="space-y-2 text-neutral-700">
+                                <li>
+                                    <a href="https://youtu.be/K4uItOV-9jQ?si=VlDFUEcskDKmbN2R" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="text-brand-light-green hover:underline font-semibold">
+                                        📺 Watch the campaign forum (YouTube mirror)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://rumble.com/v7060s2-dr.-faris-farassati-for-overland-park-mayor-town-hall-op-ks-10-10-2025.html" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="text-brand-light-green hover:underline font-semibold">
+                                        📺 Original Rumble upload (source)
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         
-                        <!-- Methodology Note -->
-                        <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-lg">
-                            <h4 class="font-bold text-brand-dark-green mb-2">Methodology</h4>
-                            <p class="text-sm text-neutral-600">
-                                Items labeled <strong>(reporting)</strong> quote or summarize positions stated directly by the candidates in the forums.<br>
-                                Items labeled <strong>(analysis)</strong> are OP Voice's comparative context or interpretation.
+                        <!-- Conditions Callout -->
+                        <div class="bg-warn-50 border-l-4 border-warn-300 p-6 rounded-r-lg mb-8">
+                            <h4 class="font-bold text-warn-800 mb-3">What Farassati asked the JoCo Post to agree to</h4>
+                            <p class="text-sm text-neutral-700 mb-2">(per Post reporting and moderator remarks at the forum):</p>
+                            <ul class="list-disc ml-6 space-y-1 text-neutral-700 mb-3">
+                                <li>Four campaign-written questions asked in exact verbiage, with the order pre-approved by his side</li>
+                                <li>Open mic for audience questions for half the forum time</li>
+                                <li>No notes or written materials for candidates</li>
+                                <li>Audience expressions (e.g., clapping) not suppressed</li>
+                            </ul>
+                            <p class="text-neutral-700 font-semibold mb-2">The Post declined; Dr. Farassati did not attend its forum.</p>
+                            <p class="text-xs text-neutral-600">
+                                Note: The moderator read Dr. Farassati's email containing these requirements verbatim during the October 6 JoCo Post forum (timestamp ≈ 00:04:55–00:07:10).
                             </p>
                         </div>
                     </div>
@@ -218,8 +278,57 @@
             </div>
         </section>
 
+        <!-- Two Forums, Two Formats Section -->
+        <section class="py-12 bg-neutral-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold text-brand-dark-green mb-6">Two Forums, Two Formats</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-brand-light50 p-6 rounded-lg border border-brand-light-green">
+                            <h3 class="font-bold text-brand-dark-green mb-3">Skoog @ JoCo Post Forum — October 2</h3>
+                            
+                            <div class="mb-3">
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Host & Type:</h4>
+                                <p class="text-neutral-700 text-sm">A nonpartisan candidate forum hosted by the Johnson County Post and co-sponsored by the Johnson County Library.</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Moderation Style:</h4>
+                                <p class="text-neutral-700 text-sm">Moderated by a single host (Kyle Palmer, Editor of the Johnson County Post). The format consisted of direct questions posed to the candidate.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Audience Format:</h4>
+                                <p class="text-neutral-700 text-sm">The event followed standard public forum guidelines—standard rules of decorum for public forums to ensure fairness and order.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-neutral-200 shadow-sm">
+                            <h3 class="font-bold text-brand-dark-green mb-3">Farassati Forum — October 10</h3>
+                            
+                            <div class="mb-3">
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Host & Type:</h4>
+                                <p class="text-neutral-700 text-sm">A campaign-organized town hall held by the Farassati campaign.</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Moderation Style:</h4>
+                                <p class="text-neutral-700 text-sm">Moderated by a panel of individuals selected by the campaign: Maria Holiday (described in event materials as "fromer [sic] Johnson County Republican Party chair"), Mike Czenge (2021 Mayoral Candidate), and Mike Negley (Financial/Political Analyst). The format included moderator framing of questions and follow-up commentary.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-neutral-900 text-sm mb-1">Audience Format:</h4>
+                                <p class="text-neutral-700 text-sm">The event followed a town hall format, where audience reactions and interjections occurred.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Policy Comparisons Section -->
-        <section class="py-16 bg-neutral-50">
+        <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-5xl mx-auto">
                     <h2 class="text-3xl font-bold text-brand-dark-green text-center mb-12">
@@ -229,21 +338,21 @@
                     <!-- Policy Topic 1: Housing -->
                     <div class="bg-white rounded-lg shadow-md p-8 mb-8 border border-neutral-200">
                         <h3 class="text-2xl font-bold text-brand-dark-green mb-6">
-                            1. Housing and the Comprehensive Plan (Framework OP)
+                            1. Housing and the Comprehensive Plan (<a href="https://www.opkansas.org/city-services/planning-development/long-range-planning/comprehensive-plan/" target="_blank" rel="noopener noreferrer" class="text-brand-light-green hover:underline">Framework OP</a>)
                         </h3>
                         
                         <div class="space-y-4">
                             <div class="border-l-4 border-neutral-400 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Mayor Curt Skoog</h4>
                                 <p class="text-neutral-700">
-                                    Implement <em>Framework OP</em>; update the development code to allow more duplexes/townhomes/condos; target "all types and price points." <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Follow the city's plan; allow more duplexes/townhomes/condos across price points. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                             
                             <div class="border-l-4 border-neutral-600 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Dr. Faris Farassati</h4>
                                 <p class="text-neutral-700">
-                                    Supports apartments where already zoned/approved; opposes up-zoning near single-family for higher density; prefers incentives alternatives; argues current pipeline already meets demand. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Build apartments where already zoned; oppose up-zoning near single-family areas. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                         </div>
@@ -252,23 +361,39 @@
                     <!-- Policy Topic 2: Tax Incentives -->
                     <div class="bg-white rounded-lg shadow-md p-8 mb-8 border border-neutral-200">
                         <h3 class="text-2xl font-bold text-brand-dark-green mb-6">
-                            2. Tax Incentives / TIF Policy
+                            2. Tax Incentives / <span class="tooltip">TIF<span class="tooltiptext">Tax Increment Financing (TIF) is a public financing tool used to encourage development. When a TIF district is established, any new property tax revenue generated by increased property values—the "tax increment"—is used to pay back the costs of public improvements (like streets, sewers, and parking) that made the development possible. It is intended for projects that would not happen "but for" this financial assistance.</span></span> Policy
                         </h3>
                         
                         <div class="space-y-4">
                             <div class="border-l-4 border-neutral-400 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Mayor Curt Skoog</h4>
                                 <p class="text-neutral-700">
-                                    Defends incentive use for infrastructure and reinvestment; references OP's project-by-project evaluation and "pay-as-you-grow," with reporting available to the public. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Says incentives help pay for infrastructure and are decided case-by-case; points to public reports on outcomes. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                             
                             <div class="border-l-4 border-neutral-600 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Dr. Faris Farassati</h4>
                                 <p class="text-neutral-700">
-                                    Says incentives are excessive and opaque; would curb or eliminate most; proposes plain-English annual accounting of all subsidies and outcomes. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Says incentives are overused and hard to follow; would cut most and publish a yearly, plain-English report of all subsidies and results. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
+                        </div>
+                        
+                        <!-- What this means block -->
+                        <div class="mt-6 bg-brand-light50 border-l-4 border-brand-light-green p-6 rounded-r-lg">
+                            <h4 class="font-bold text-brand-dark-green mb-3">What this means for you</h4>
+                            <p class="text-neutral-700 mb-3">
+                                This is a fundamental disagreement about how to best use the new tax money generated by a development.
+                            </p>
+                            <ul class="space-y-3 text-neutral-700">
+                                <li>
+                                    <strong class="text-brand-dark-green">Skoog's approach (pro-TIF):</strong> Argues for using that new tax money as a financial tool to help a specific project get built. The goal is to attract major employers or large-scale developments that the city believes wouldn't come otherwise, creating a larger, more valuable tax base for the long term.
+                                </li>
+                                <li>
+                                    <strong class="text-brand-dark-green">Farassati's approach (anti-TIF):</strong> Argues for collecting that new tax money immediately for the general fund. The goal is to use those funds to pay for current city-wide services (like police and parks) or provide immediate property tax relief, arguing that many of these projects would happen anyway without an incentive.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -282,7 +407,7 @@
                             <div class="border-l-4 border-neutral-400 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Mayor Curt Skoog</h4>
                                 <p class="text-neutral-700">
-                                    States OP does not participate in ICE operations and has not entered a 287(g) agreement. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    States OP does not participate in ICE operations and has not entered a <span class="tooltip">287(g)<span class="tooltiptext">The 287(g) program refers to Section 287(g) of the U.S. Immigration and Nationality Act, which allows federal immigration authorities (ICE) to enter into voluntary agreements with state and local law enforcement agencies. These agreements delegate specific federal immigration enforcement powers to designated local officers, such as investigating the immigration status of individuals in their custody.</span></span> agreement. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                             
@@ -420,16 +545,24 @@
                             <div class="border-l-4 border-neutral-400 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Mayor Curt Skoog</h4>
                                 <p class="text-neutral-700">
-                                    Stated support for the current budget process and maintaining service levels and fiscal stability; described revenue-neutrality trade-offs. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Backs current budgeting and service levels; says going fully "<span class="tooltip">revenue neutral<span class="tooltiptext">In Kansas, the revenue-neutral rate is the property tax rate (mill levy) that a city or county would set to collect the exact same total amount of tax dollars as the year before. If property values go up, the revenue-neutral rate goes down to keep the total tax revenue flat. If a city's budget proposes collecting more total property tax dollars than the previous year, it is said to "exceed the revenue-neutral rate" and must hold a special public hearing to approve it.</span></span>" means service trade-offs. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                             
                             <div class="border-l-4 border-neutral-600 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Dr. Faris Farassati</h4>
                                 <p class="text-neutral-700">
-                                    Stated support for zero-based budgeting, forming a citizen advisory budget commission, and pursuing revenue neutrality / a property tax freeze. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Favors zero-based budgeting, a citizens budget commission, and targeting revenue-neutral / property-tax freeze. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
+                        </div>
+                        
+                        <!-- What this means block -->
+                        <div class="mt-6 bg-brand-light50 border-l-4 border-brand-light-green p-6 rounded-r-lg">
+                            <h4 class="font-bold text-brand-dark-green mb-3">What this means for you</h4>
+                            <p class="text-neutral-700">
+                                This debate is about the city's overall spending. Skoog favors funding services at current levels, while Farassati wants to freeze or lower the property tax rate, which could mean changes to services.
+                            </p>
                         </div>
                     </div>
 
@@ -443,62 +576,17 @@
                             <div class="border-l-4 border-neutral-400 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Mayor Curt Skoog</h4>
                                 <p class="text-neutral-700">
-                                    Referenced current city campaign-finance and conflict-of-interest standards; did not outline new changes beyond existing practice in the forum. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Cites existing city rules; no new specific changes proposed in this forum. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                             
                             <div class="border-l-4 border-neutral-600 pl-4">
                                 <h4 class="font-bold text-neutral-900 mb-2">Dr. Faris Farassati</h4>
                                 <p class="text-neutral-700">
-                                    Proposed a recusal rule for council members receiving over $500 from an applicant and the creation of a permanent, public online voting database. <span class="text-sm text-neutral-500">(reporting)</span>
+                                    Would require recusal if a councilmember took >$500 from an applicant and publish a searchable online voting record. <span class="text-sm text-neutral-500">(reporting)</span>
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Forum Formats Section -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-bold text-brand-dark-green text-center mb-12">
-                        Two Forums, Two Formats
-                    </h2>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mb-12">
-                        <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-200">
-                            <h3 class="text-xl font-bold text-brand-dark-green mb-4">
-                                The Johnson County Post Forum — October 6
-                            </h3>
-                            <p class="text-neutral-700">
-                                This event was hosted and moderated by the <em>Johnson County Post</em>. Questions covered housing, economic development, public safety, and amenities. <span class="text-sm text-neutral-500">(reporting)</span>
-                            </p>
-                        </div>
-                        
-                        <div class="bg-neutral-50 rounded-lg shadow-md p-6 border border-neutral-200">
-                            <h3 class="text-xl font-bold text-brand-dark-green mb-4">
-                                The Farassati Forum — October 10
-                            </h3>
-                            <p class="text-neutral-700">
-                                This independently organized event featured only Dr. Farassati with questions from moderators and audience. Moderators occasionally offered <strong>commentary</strong> or affirmations between questions. <span class="text-sm text-neutral-500">(reporting)</span>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-brand-light50 border-l-4 border-brand-light-green p-6 rounded-r-lg">
-                        <h4 class="font-bold text-brand-dark-green mb-4">Contrast in structure and tone <span class="text-sm text-neutral-500">(analysis)</span></h4>
-                        <ul class="space-y-3 text-neutral-700">
-                            <li class="flex items-start">
-                                <span class="text-brand-light-green mr-2">•</span>
-                                <span>The Johnson County Post forum was moderated by the Johnson County Post's editor and publicly archived by the newsroom.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-brand-light-green mr-2">•</span>
-                                <span>The Farassati forum was organized by his campaign and moderated by invitees he selected, including former Johnson County Republican Party chair Maria Holiday. Two recordings are publicly available: the original on Rumble and an OP Voice mirror on YouTube. As of October 16, 2025, the campaign had not posted the full forum, though clips appear on its Facebook page.</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -509,12 +597,11 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-6xl mx-auto">
                     <h2 class="text-3xl font-bold text-brand-dark-green text-center mb-12">
-                        Summary Table
+                        Quick Comparison Guide
                     </h2>
                     
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="overflow-x-auto">
-                            <table class="w-full">
+                        <table class="w-full policy-comparison-table">
                                 <thead class="bg-brand-dark-green text-white">
                                     <tr>
                                         <th class="px-6 py-4 text-left font-bold">Policy Area</th>
@@ -523,93 +610,297 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-neutral-200">
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Housing / Framework OP</td>
-                                        <td class="px-6 py-4 text-neutral-700">Implement plan; broaden housing types/prices</td>
-                                        <td class="px-6 py-4 text-neutral-700">Opposes up-zoning for dense apartments near SF areas; build where already zoned</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-development">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🏘️</span>
+                                            Housing / Framework OP
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Follow the city's plan; allow more duplexes/townhomes/condos across price points.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Build apartments where already zoned; oppose up-zoning near single-family areas.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">TIF & Development</td>
-                                        <td class="px-6 py-4 text-neutral-700">Targeted, infrastructure-focused; public reporting</td>
-                                        <td class="px-6 py-4 text-neutral-700">Cut/curb subsidies; plain-English annual accounting</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-development">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">💰</span>
+                                            Tax Incentives (TIF, etc.)
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Use case-by-case to fund infrastructure; points to public reports.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Cut/curb most incentives; publish a simple annual "where the money went" report.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Public Safety / ICE</td>
-                                        <td class="px-6 py-4 text-neutral-700">No 287(g); no ICE operations participation</td>
-                                        <td class="px-6 py-4 text-neutral-700">Cooperate with federal enforcement under state law</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-safety">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🚔</span>
+                                            Public Safety / ICE
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">No 287(g); city doesn't participate in ICE operations.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Cooperate with federal enforcement consistent with state law.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Homelessness</td>
-                                        <td class="px-6 py-4 text-neutral-700">Partnerships; leverage existing resources</td>
-                                        <td class="px-6 py-4 text-neutral-700">"Humane and firm"; remove encampments; connect to services</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-services">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🏕️</span>
+                                            Homelessness
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Partner with providers; leverage existing county/city resources.</td>
+                                        <td class="px-6 py-4 text-neutral-700">"Humane and firm"; remove encampments, connect to services.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Economic Corridors</td>
-                                        <td class="px-6 py-4 text-neutral-700">Reimagine College Blvd with mixed uses</td>
-                                        <td class="px-6 py-4 text-neutral-700">Prioritize core services; oppose costly civic/hotel-style projects</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-development">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🏢</span>
+                                            Econ Dev
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Re-imagine corridor with jobs + housing mix to keep economy strong.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Prioritize core services; skeptical of big civic/hotel-style projects.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Stadium Proposal</td>
-                                        <td class="px-6 py-4 text-neutral-700">Evaluate if proposed; weigh incentives/fit</td>
-                                        <td class="px-6 py-4 text-neutral-700">Oppose stadium in OP</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-development">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">⚾</span>
+                                            Royals Stadium
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Would evaluate any Overland Park proposal on fit and financing.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Opposes a stadium in Overland Park.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Inclusivity / DEI</td>
-                                        <td class="px-6 py-4 text-neutral-700">"Welcoming city," LGBTQ+ inclusion</td>
-                                        <td class="px-6 py-4 text-neutral-700">Merit-based hiring; avoid DEI/CRT filters</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-governance">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🤝</span>
+                                            Inclusion / DEI
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">"Welcoming city," including LGBTQ+ residents.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Emphasizes merit-based hiring; opposes DEI/CRT as filters.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Pools / Amenities</td>
-                                        <td class="px-6 py-4 text-neutral-700">Regional-first; costs under review</td>
-                                        <td class="px-6 py-4 text-neutral-700">Restore neighborhood pools where feasible</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-services">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">🏊</span>
+                                            Pools & Amenities
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Notes high costs; recent tilt toward regional facilities; review underway.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Restore neighborhood pools where feasible; questions cost estimates.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Budget & Taxes</td>
-                                        <td class="px-6 py-4 text-neutral-700">Maintain service levels; revenue-neutrality trade-offs</td>
-                                        <td class="px-6 py-4 text-neutral-700">Zero-based budgeting; citizen budget advisory; revenue-neutral / freeze goal</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-governance">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">📊</span>
+                                            Budget & Taxes
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Keep service levels; acknowledges trade-offs with full revenue-neutral.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Zero-based budgeting; citizens budget commission; target revenue-neutral/freeze.</td>
                                     </tr>
-                                    <tr class="hover:bg-neutral-50">
-                                        <td class="px-6 py-4 font-semibold text-neutral-900">Campaign Finance / COI</td>
-                                        <td class="px-6 py-4 text-neutral-700">Existing standards; no new changes stated in forum</td>
-                                        <td class="px-6 py-4 text-neutral-700">Recusal >$500 from applicant; public online voting database</td>
+                                    <tr class="hover:bg-brand-light50 transition-colors category-governance">
+                                        <td class="px-6 py-4 font-semibold text-neutral-900">
+                                            <span class="inline-block mr-2" aria-hidden="true">⚖️</span>
+                                            Campaign Finance / COI
+                                        </td>
+                                        <td class="px-6 py-4 text-neutral-700">Points to current rules; no new changes offered here.</td>
+                                        <td class="px-6 py-4 text-neutral-700">Recusal if >$500 from applicant; public online voting database.</td>
                                     </tr>
                                 </tbody>
                             </table>
+                    </div>
+                    
+                    <!-- Category Legend -->
+                    <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm text-neutral-600">
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 bg-blue-200 border-l-4 border-blue-500 mr-2"></span>
+                            <span>Development & Economy</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 bg-red-200 border-l-4 border-red-500 mr-2"></span>
+                            <span>Public Safety</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 bg-green-200 border-l-4 border-green-600 mr-2"></span>
+                            <span>Community Services</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-200 border-l-4 border-purple-500 mr-2"></span>
+                            <span>Governance</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <style>
+            /* Category color-coding with left borders - applied to first td */
+            .category-development td:first-child {
+                border-left: 4px solid #3B82F6 !important;
+            }
+            
+            .category-safety td:first-child {
+                border-left: 4px solid #EF4444 !important;
+            }
+            
+            .category-services td:first-child {
+                border-left: 4px solid #16A34A !important;
+            }
+            
+            .category-governance td:first-child {
+                border-left: 4px solid #A855F7 !important;
+            }
+            
+            /* Enhanced row hover effect */
+            .policy-comparison-table tbody tr:hover {
+                transform: scale(1.005);
+                box-shadow: 0 2px 8px rgba(106, 153, 78, 0.15);
+            }
+            
+            /* Smooth transitions */
+            .policy-comparison-table tbody tr {
+                transition: all 0.2s ease;
+            }
+        </style>
+        
+        <!-- Glossary Tab Styles -->
+        <style>
+            /* Glossary tab button - always visible */
+            #glossary-tab {
+                position: fixed;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%) rotate(-90deg);
+                transform-origin: right center;
+                background: #6A994E;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px 8px 0 0;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+                box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                text-align: center;
+                z-index: 1001;
+            }
+            
+            #glossary-tab:hover {
+                background: #88C364;
+            }
+            
+            /* When glossary is open, hide the tab */
+            #glossary-container.open #glossary-tab {
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            /* Glossary panel */
+            #glossary-panel {
+                position: fixed;
+                right: -350px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: white;
+                width: 350px;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+                padding: 24px;
+                z-index: 1000;
+                transition: right 0.3s ease;
+            }
+            
+            #glossary-container.open #glossary-panel {
+                right: 0;
+            }
+            
+            /* Glossary content */
+            .glossary-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #6A994E;
+            }
+            
+            .glossary-close {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #374151;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                transition: background 0.2s;
+            }
+            
+            .glossary-close:hover {
+                background: #F5F5F5;
+            }
+            
+            .glossary-term {
+                margin-bottom: 20px;
+            }
+            
+            .glossary-term-name {
+                font-weight: 700;
+                color: #2E5339;
+                font-size: 15px;
+                margin-bottom: 6px;
+            }
+            
+            .glossary-term-definition {
+                font-size: 14px;
+                color: #374151;
+                line-height: 1.6;
+            }
+            
+            /* Hide on small screens */
+            @media (max-width: 768px) {
+                #glossary-tab,
+                #glossary-panel {
+                    display: none;
+                }
+            }
+        </style>
 
         <!-- Conclusion Section -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-bold text-brand-dark-green text-center mb-8">
+                    <h2 class="text-3xl font-bold text-brand-dark-green text-center mb-12">
                         Conclusion
                     </h2>
                     
-                    <div class="prose prose-lg max-w-none text-center">
-                        <p class="text-lg text-neutral-700 leading-relaxed mb-6">
-                            Hearing the candidates in their own words remains the best way to understand their visions for Overland Park's future.
-                            Review the full recordings, read <em>Framework OP</em>, and compare each platform's trade-offs to decide which vision best reflects your priorities.
-                        </p>
-                        
-                        <p class="text-lg text-neutral-700 leading-relaxed mb-8">
-                            <strong>OP Voice</strong> is committed to nonpartisan, fact-based coverage that helps residents make informed choices.
-                            We encourage readers to review both forums in full, read <em>Framework OP</em>, and evaluate the proposals against documented needs and fiscal realities.
-                        </p>
-                        
-                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                            <a href="index.html#get-involved" 
-                               class="bg-brand-dark-green text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-light-green transition-colors">
-                                Get Involved
-                            </a>
-                            <a href="voter-research-guide-2025.html" 
-                               class="border-2 border-brand-dark-green text-brand-dark-green px-8 py-3 rounded-lg font-bold hover:bg-brand-dark-green hover:text-white transition-colors">
-                                More Election Coverage
-                            </a>
+                    <div class="space-y-8">
+                        <!-- Why there were two forums -->
+                        <div class="bg-neutral-50 border-l-4 border-neutral-400 p-6 rounded-r-lg">
+                            <h3 class="text-xl font-bold text-brand-dark-green mb-3">Why there were two forums</h3>
+                            <p class="text-neutral-700 leading-relaxed">
+                                The Post declined conditions requested by the Farassati campaign (as read aloud by the moderator at the JoCo Post forum)—pre-written questions in exact wording, open-mic for half the event, no notes, and allowing audience applause and reactions. Dr. Farassati then held a separate campaign-run forum with invited moderators. Notably, they took audience questions via notecard; no open mic was present. We link both events so you can review them directly.
+                            </p>
                         </div>
+                        
+                        <!-- Check the sources yourself -->
+                        <div class="bg-brand-light50 border-l-4 border-brand-light-green p-6 rounded-r-lg">
+                            <h3 class="text-xl font-bold text-brand-dark-green mb-3">Check the sources yourself</h3>
+                            <p class="text-neutral-700 leading-relaxed mb-4">
+                                The Johnson County Library's partnership with the Post explains the neutral, moderator-led format of the Oct 2 forum. The Oct 10 event is a campaign-organized town hall; our timestamps note where moderators add color or framing so you can judge tone for yourself.
+                            </p>
+                            <p class="text-neutral-700 leading-relaxed font-semibold">
+                                OP Voice is committed to nonpartisan, verifiable civic info. If you spot a factual error, send the timestamp or link and we'll fix it promptly.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+                        <a href="index.html#get-involved" 
+                           class="bg-brand-dark-green text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-light-green transition-colors text-center">
+                            Get Involved
+                        </a>
+                        <a href="voter-research-guide-2025.html" 
+                           class="border-2 border-brand-dark-green text-brand-dark-green px-8 py-3 rounded-lg font-bold hover:bg-brand-dark-green hover:text-white transition-colors text-center">
+                            More Election Coverage
+                        </a>
+                    </div>
+                    
+                    <!-- Last Updated -->
+                    <div class="text-center text-sm text-neutral-600 mt-12 pt-8 border-t border-neutral-200">
+                        <p><strong>Last verified and updated:</strong> October 17, 2025</p>
                     </div>
                 </div>
             </div>
@@ -618,6 +909,117 @@
 
     <!-- Footer (loaded via JavaScript) -->
     <div id="footer-placeholder"></div>
+    
+    <!-- Glossary Side Panel -->
+    <div id="glossary-container">
+        <div id="glossary-tab" onclick="toggleGlossary()">KEY TERMS</div>
+        <div id="glossary-panel">
+            <div class="glossary-header">
+                <h3 class="text-xl font-bold text-brand-dark-green">Key Terms</h3>
+                <button class="glossary-close" onclick="toggleGlossary()" aria-label="Close glossary">&times;</button>
+            </div>
+            
+            <div class="glossary-content">
+                <div class="glossary-term">
+                    <div class="glossary-term-name">287(g)</div>
+                    <div class="glossary-term-definition">
+                        Refers to Section 287(g) of the U.S. Immigration and Nationality Act, which allows federal immigration authorities (ICE) to enter into voluntary agreements with state and local law enforcement agencies. These agreements delegate specific federal immigration enforcement powers to designated local officers.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">CRT (Critical Race Theory)</div>
+                    <div class="glossary-term-definition">
+                        An academic framework that examines how race and racism have shaped legal systems and social policies. In political discourse, it's often referenced in debates about diversity and inclusion programs.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">DEI (Diversity, Equity, and Inclusion)</div>
+                    <div class="glossary-term-definition">
+                        Organizational programs and policies designed to promote fair treatment and full participation of all people, particularly groups who have historically been underrepresented or subject to discrimination.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Framework OP</div>
+                    <div class="glossary-term-definition">
+                        Overland Park's comprehensive plan that guides the city's growth and development through 2045. It addresses housing, development, mobility options, and environmental considerations.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">ICE (Immigration and Customs Enforcement)</div>
+                    <div class="glossary-term-definition">
+                        A federal law enforcement agency under the U.S. Department of Homeland Security responsible for enforcing immigration laws and investigating cross-border crime.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Mill Levy</div>
+                    <div class="glossary-term-definition">
+                        The tax rate applied to property values to determine property tax amounts. One mill equals $1 of tax for every $1,000 of assessed property value.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Recusal</div>
+                    <div class="glossary-term-definition">
+                        The act of a public official removing themselves from participating in a decision due to a conflict of interest or the appearance of bias.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Revenue-Neutral Rate</div>
+                    <div class="glossary-term-definition">
+                        In Kansas, the property tax rate (mill levy) that a city or county would set to collect the exact same total amount of tax dollars as the year before. If property values go up, the revenue-neutral rate goes down to keep the total tax revenue flat. If a city's budget proposes collecting more total property tax dollars than the previous year, it must hold a special public hearing to approve it.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">TIF (Tax Increment Financing)</div>
+                    <div class="glossary-term-definition">
+                        A public financing tool used to encourage development. When a TIF district is established, any new property tax revenue generated by increased property values—the "tax increment"—is used to pay back the costs of public improvements (like streets, sewers, and parking) that made the development possible. It is intended for projects that would not happen "but for" this financial assistance.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Up-zoning</div>
+                    <div class="glossary-term-definition">
+                        Changing the zoning designation of land to allow for more intensive development, such as permitting higher-density housing or taller buildings than previously allowed.
+                    </div>
+                </div>
+                
+                <div class="glossary-term">
+                    <div class="glossary-term-name">Zero-Based Budgeting</div>
+                    <div class="glossary-term-definition">
+                        A budgeting method where all expenses must be justified for each new period, starting from a "zero base." Rather than using the previous year's budget as a starting point, every line item must be reviewed and approved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Glossary Toggle Script -->
+    <script>
+        function toggleGlossary() {
+            const container = document.getElementById('glossary-container');
+            container.classList.toggle('open');
+        }
+        
+        // Close glossary when clicking outside
+        document.addEventListener('click', function(event) {
+            const glossaryContainer = document.getElementById('glossary-container');
+            const glossaryPanel = document.getElementById('glossary-panel');
+            const glossaryTab = document.getElementById('glossary-tab');
+            
+            if (glossaryContainer.classList.contains('open') && 
+                !glossaryPanel.contains(event.target) &&
+                !glossaryTab.contains(event.target)) {
+                glossaryContainer.classList.remove('open');
+            }
+        });
+    </script>
 
     <!-- Load shared components -->
     <script src="shared-components.js"></script>
