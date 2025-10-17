@@ -340,6 +340,10 @@ function generateFooterHTML() {
             </div>
         </div>
     </footer>
+    
+    <!-- GoatCounter Analytics - Privacy-First Tracking -->
+    <script data-goatcounter="https://opvoice.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
 `;
 }
 
